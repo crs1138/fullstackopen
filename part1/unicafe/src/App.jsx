@@ -1,5 +1,5 @@
 import { useState } from "react";
-import StatsDisplay from "./StatsDisplay";
+import Statistics from "./Statistics";
 import Button from "./Button";
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
       >
         Bad
       </Button>
-      <StatsDisplay good={good} neutral={neutral} bad={bad} />
+      <Statistics good={good} neutral={neutral} bad={bad} />
     </div>
   );
 }
