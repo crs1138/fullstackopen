@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import Filter from './Filter'
+import PersonForm from './PersonForm'
+import Persons from './Persons'
 
 const App = () => {
     const [persons, setPersons] = useState([
@@ -32,6 +35,10 @@ const App = () => {
         setNewNumber('')
     }
 
+    const handleNewName = (event) => setNewName(event.target.value)
+
+    const handleNewNumber = (event) => setNewNumber(event.target.value)
+
     const filteredPersons =
         nameFilter === ''
             ? persons
@@ -43,48 +50,19 @@ const App = () => {
     return (
         <div>
             <h1>Phonebook</h1>
-            <div>
-                <label htmlFor="">Filter by name: </label>
-                <input
-                    type="text"
-                    name="nameFilter"
-                    id="nameFilter"
-                    value={nameFilter}
-                    onChange={filterByName}
-                />
-            </div>
+            <Filter name={nameFilter} filterByName={filterByName} />
+
             <h2>Add new</h2>
-            <form onSubmit={addPerson}>
-                <div>
-                    <label htmlFor="name">name: </label>
-                    <input
-                        onChange={(event) => {
-                            setNewName(event.target.value)
-                        }}
-                        value={newName}
-                        id="name"
-                        name="name"
-                    />
-                </div>
-                <div>
-                    <label htmlFor="number">number:</label>
-                    <input
-                        type="text"
-                        name="number"
-                        id="number"
-                        value={newNumber}
-                        onChange={(event) => setNewNumber(event.target.value)}
-                    />
-                </div>
-                <div>
-                    <button type="submit">add</button>
-                </div>
-            </form>
+            <PersonForm
+                addPerson={addPerson}
+                newName={newName}
+                handleNewName={handleNewName}
+                newNumber={newNumber}
+                handleNewNumber={handleNewNumber}
+            />
+
             <h2>Numbers</h2>
-            {filteredPersons.map((person) => {
-                const { name, number } = person
-                return <p key={name}>{`${name}: ${number}`}</p>
-            })}
+            <Persons persons={filteredPersons} />
         </div>
     )
 }
