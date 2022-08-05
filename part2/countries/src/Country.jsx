@@ -1,5 +1,5 @@
-const Country = ({ country }) => {
-    const { name, capital, area, languages, flags } = country
+const Country = ({ details }) => {
+    const { name, capital, area, languages, flags } = details
     const languagesArr = Object.entries(languages)
     return (
         <div>

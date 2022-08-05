@@ -7,46 +7,59 @@ import Country from './Country'
 function App() {
     const [allCountries, setAllCountries] = useState([])
     const [filter, setFilter] = useState('')
-
-    let sourceURI = 'https://restcountries.com/v3.1/all'
-    // sourceURI = 'http://localhost:3001/countries'
+    const [filteredCountries, setFilteredCountries] = useState([])
+    const [singleCountry, setSingleCountry] = useState()
 
     useEffect(() => {
+        let sourceURI = 'https://restcountries.com/v3.1/all'
         axios.get(sourceURI).then((response) => {
             setAllCountries(response.data)
         })
     }, [])
 
-    const filterByCountryName = (event) => {
+    useEffect(() => {
+        const countries = allCountries.filter((country) => {
+            const { common } = country.name
+            return common.toLowerCase().includes(filter)
+        })
+
+        setFilteredCountries(countries)
+    }, [allCountries, filter])
+
+    useEffect(() => {
+        if (filteredCountries.length === 1) {
+            setSingleCountry(filteredCountries[0])
+        } else {
+            setSingleCountry()
+        }
+    }, [filteredCountries])
+
+    function filterByCountryName(event) {
         setFilter(event.target.value.toLowerCase())
     }
 
-    function getFilteredCountries(countries) {
-        return countries.filter((country) => {
-            const { common } = country.name
-            return country.name.common.toLowerCase().includes(filter)
-        })
+    function showSingleCountry(event) {
+        const countryCode = event.target.id
+        const showCountry = filteredCountries.find(
+            (country) => country.cca3 === countryCode
+        )
+        setSingleCountry(showCountry)
     }
 
-    const filteredCountries = getFilteredCountries(allCountries)
-
-    function showResults(countriesCount) {
-        if (countriesCount > 10) {
-            return <div>Too many countries, update your filter</div>
-        }
-        if (countriesCount > 1) {
-            return <Countries countries={filteredCountries} />
-        }
-        if (countriesCount === 1) {
-            const [singleCountry] = filteredCountries
-            return <Country country={singleCountry} />
-        }
-        return <div>There are no results for search.</div>
-    }
     return (
         <div className="App">
             <Filter value={filter} onChange={filterByCountryName} />
-            {showResults(filteredCountries.length)}
+            {!singleCountry && filteredCountries.length > 1 && (
+                <Countries
+                    countries={filteredCountries}
+                    showCountry={showSingleCountry}
+                />
+            )}
+            {!!singleCountry && <Country details={singleCountry} />}
+            {allCountries.length > 0 && filteredCountries.length <= 0 && (
+                <div>There are no results for your search.</div>
+            )}
+            {allCountries.length === 0 && <div>Loading countries...</div>}
         </div>
     )
 }
