@@ -1,0 +1,2307 @@
+{
+    "countries": [
+        {
+            "name": {
+                "common": "Kuwait",
+                "official": "State of Kuwait",
+                "nativeName": {
+                    "ara": {
+                        "official": "دولة الكويت",
+                        "common": "الكويت"
+                    }
+                }
+            },
+            "tld": [".kw"],
+            "cca2": "KW",
+            "ccn3": "414",
+            "cca3": "KWT",
+            "cioc": "KUW",
+            "independent": true,
+            "status": "officially-assigned",
+            "unMember": true,
+            "currencies": {
+                "KWD": {
+                    "name": "Kuwaiti dinar",
+                    "symbol": "د.ك"
+                }
+            },
+            "idd": {
+                "root": "+9",
+                "suffixes": ["65"]
+            },
+            "capital": ["Kuwait City"],
+            "altSpellings": ["KW", "State of Kuwait", "Dawlat al-Kuwait"],
+            "region": "Asia",
+            "subregion": "Western Asia",
+            "languages": {
+                "ara": "Arabic"
+            },
+            "translations": {
+                "ara": {
+                    "official": "دولة الكويت",
+                    "common": "الكويت"
+                },
+                "ces": {
+                    "official": "Stát Kuvajt",
+                    "common": "Kuvajt"
+                },
+                "cym": {
+                    "official": "State of Kuwait",
+                    "common": "Kuwait"
+                },
+                "deu": {
+                    "official": "Staat Kuwait",
+                    "common": "Kuwait"
+                },
+                "est": {
+                    "official": "Kuveidi Riik",
+                    "common": "Kuveit"
+                },
+                "fin": {
+                    "official": "Kuwaitin valtio",
+                    "common": "Kuwait"
+                },
+                "fra": {
+                    "official": "État du Koweït",
+                    "common": "Koweït"
+                },
+                "hrv": {
+                    "official": "Država Kuvajt",
+                    "common": "Kuvajt"
+                },
+                "hun": {
+                    "official": "Kuvaiti Állam",
+                    "common": "Kuvait"
+                },
+                "ita": {
+                    "official": "Stato del Kuwait",
+                    "common": "Kuwait"
+                },
+                "jpn": {
+                    "official": "クウェート国",
+                    "common": "クウェート"
+                },
+                "kor": {
+                    "official": "쿠웨이트국",
+                    "common": "쿠웨이트"
+                },
+                "nld": {
+                    "official": "Staat Koeweit",
+                    "common": "Koeweit"
+                },
+                "per": {
+                    "official": "دولت کویت",
+                    "common": "کُویت"
+                },
+                "pol": {
+                    "official": "Państwo Kuwejt",
+                    "common": "Kuwejt"
+                },
+                "por": {
+                    "official": "Estado do Kuwait",
+                    "common": "Kuwait"
+                },
+                "rus": {
+                    "official": "Государство Кувейт",
+                    "common": "Кувейт"
+                },
+                "slk": {
+                    "official": "Kuvajtský štát",
+                    "common": "Kuvajt"
+                },
+                "spa": {
+                    "official": "Estado de Kuwait",
+                    "common": "Kuwait"
+                },
+                "swe": {
+                    "official": "Staten Kuwait",
+                    "common": "Kuwait"
+                },
+                "urd": {
+                    "official": "دولتِ کویت",
+                    "common": "کویت"
+                },
+                "zho": {
+                    "official": "科威特国",
+                    "common": "科威特"
+                }
+            },
+            "latlng": [29.5, 45.75],
+            "landlocked": false,
+            "borders": ["IRQ", "SAU"],
+            "area": 17818.0,
+            "demonyms": {
+                "eng": {
+                    "f": "Kuwaiti",
+                    "m": "Kuwaiti"
+                },
+                "fra": {
+                    "f": "Koweïtienne",
+                    "m": "Koweïtien"
+                }
+            },
+            "flag": "🇰🇼",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/aqr3aNQjS1BAvksJ7",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/305099"
+            },
+            "population": 4270563,
+            "fifa": "KUW",
+            "car": {
+                "signs": ["KWT"],
+                "side": "right"
+            },
+            "timezones": ["UTC+03:00"],
+            "continents": ["Asia"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/kw.png",
+                "svg": "https://flagcdn.com/kw.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/kw.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/kw.svg"
+            },
+            "startOfWeek": "sunday",
+            "capitalInfo": {
+                "latlng": [29.37, 47.97]
+            },
+            "postalCode": {
+                "format": "#####",
+                "regex": "^(\\d{5})$"
+            }
+        },
+        {
+            "name": {
+                "common": "Palau",
+                "official": "Republic of Palau",
+                "nativeName": {
+                    "eng": {
+                        "official": "Republic of Palau",
+                        "common": "Palau"
+                    },
+                    "pau": {
+                        "official": "Beluu er a Belau",
+                        "common": "Belau"
+                    }
+                }
+            },
+            "tld": [".pw"],
+            "cca2": "PW",
+            "ccn3": "585",
+            "cca3": "PLW",
+            "cioc": "PLW",
+            "independent": true,
+            "status": "officially-assigned",
+            "unMember": true,
+            "currencies": {
+                "USD": {
+                    "name": "United States dollar",
+                    "symbol": "$"
+                }
+            },
+            "idd": {
+                "root": "+6",
+                "suffixes": ["80"]
+            },
+            "capital": ["Ngerulmud"],
+            "altSpellings": ["PW", "Republic of Palau", "Beluu er a Belau"],
+            "region": "Oceania",
+            "subregion": "Micronesia",
+            "languages": {
+                "eng": "English",
+                "pau": "Palauan"
+            },
+            "translations": {
+                "ara": {
+                    "official": "جمهورية بالاو",
+                    "common": "بالاو"
+                },
+                "ces": {
+                    "official": "Republika Palau",
+                    "common": "Palau"
+                },
+                "cym": {
+                    "official": "Republic of Palau",
+                    "common": "Palau"
+                },
+                "deu": {
+                    "official": "Republik Palau",
+                    "common": "Palau"
+                },
+                "est": {
+                    "official": "Belau Vabariik",
+                    "common": "Belau"
+                },
+                "fin": {
+                    "official": "Palaun tasavalta",
+                    "common": "Palau"
+                },
+                "fra": {
+                    "official": "République des Palaos (Palau)",
+                    "common": "Palaos (Palau)"
+                },
+                "hrv": {
+                    "official": "Republika Palau",
+                    "common": "Palau"
+                },
+                "hun": {
+                    "official": "Palaui Köztársaság",
+                    "common": "Palau"
+                },
+                "ita": {
+                    "official": "Repubblica di Palau",
+                    "common": "Palau"
+                },
+                "jpn": {
+                    "official": "パラオ共和国",
+                    "common": "パラオ"
+                },
+                "kor": {
+                    "official": "팔라우 공화국",
+                    "common": "팔라우"
+                },
+                "nld": {
+                    "official": "Republiek van Palau",
+                    "common": "Palau"
+                },
+                "per": {
+                    "official": "جمهوری پالائو",
+                    "common": "پالائو"
+                },
+                "pol": {
+                    "official": "Republika Palau",
+                    "common": "Palau"
+                },
+                "por": {
+                    "official": "República de Palau",
+                    "common": "Palau"
+                },
+                "rus": {
+                    "official": "Республика Палау",
+                    "common": "Палау"
+                },
+                "slk": {
+                    "official": "Palauská republika",
+                    "common": "Palau"
+                },
+                "spa": {
+                    "official": "República de Palau",
+                    "common": "Palau"
+                },
+                "swe": {
+                    "official": "Republiken Palau",
+                    "common": "Palau"
+                },
+                "urd": {
+                    "official": "جمہوریہ پلاؤ",
+                    "common": "پلاؤ"
+                },
+                "zho": {
+                    "official": "帕劳共和国",
+                    "common": "帕劳"
+                }
+            },
+            "latlng": [7.5, 134.5],
+            "landlocked": false,
+            "area": 459.0,
+            "demonyms": {
+                "eng": {
+                    "f": "Palauan",
+                    "m": "Palauan"
+                },
+                "fra": {
+                    "f": "Paluane",
+                    "m": "Paluan"
+                }
+            },
+            "flag": "🇵🇼",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/MVasQBbUkQP7qQDR9",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/571805"
+            },
+            "population": 18092,
+            "car": {
+                "signs": ["PAL"],
+                "side": "right"
+            },
+            "timezones": ["UTC+09:00"],
+            "continents": ["Oceania"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/pw.png",
+                "svg": "https://flagcdn.com/pw.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/pw.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/pw.svg"
+            },
+            "startOfWeek": "monday",
+            "capitalInfo": {
+                "latlng": [7.5, 134.62]
+            },
+            "postalCode": {
+                "format": "96940",
+                "regex": "^(96940)$"
+            }
+        },
+        {
+            "name": {
+                "common": "Liechtenstein",
+                "official": "Principality of Liechtenstein",
+                "nativeName": {
+                    "deu": {
+                        "official": "Fürstentum Liechtenstein",
+                        "common": "Liechtenstein"
+                    }
+                }
+            },
+            "tld": [".li"],
+            "cca2": "LI",
+            "ccn3": "438",
+            "cca3": "LIE",
+            "cioc": "LIE",
+            "independent": true,
+            "status": "officially-assigned",
+            "unMember": true,
+            "currencies": {
+                "CHF": {
+                    "name": "Swiss franc",
+                    "symbol": "Fr"
+                }
+            },
+            "idd": {
+                "root": "+4",
+                "suffixes": ["23"]
+            },
+            "capital": ["Vaduz"],
+            "altSpellings": [
+                "LI",
+                "Principality of Liechtenstein",
+                "Fürstentum Liechtenstein"
+            ],
+            "region": "Europe",
+            "subregion": "Western Europe",
+            "languages": {
+                "deu": "German"
+            },
+            "translations": {
+                "ara": {
+                    "official": "إمارة ليختنشتاين",
+                    "common": "ليختنشتاين"
+                },
+                "ces": {
+                    "official": "Knížectví Lichtenštejnské",
+                    "common": "Lichtenštejnsko"
+                },
+                "cym": {
+                    "official": "Principality of Liechtenstein",
+                    "common": "Liechtenstein"
+                },
+                "deu": {
+                    "official": "Fürstentum Liechtenstein",
+                    "common": "Liechtenstein"
+                },
+                "est": {
+                    "official": "Liechtensteini Vürstiriik",
+                    "common": "Liechtenstein"
+                },
+                "fin": {
+                    "official": "Liechensteinin ruhtinaskunta",
+                    "common": "Liechenstein"
+                },
+                "fra": {
+                    "official": "Principauté du Liechtenstein",
+                    "common": "Liechtenstein"
+                },
+                "hrv": {
+                    "official": "Kneževina Lihtenštajn",
+                    "common": "Lihtenštajn"
+                },
+                "hun": {
+                    "official": "Liechtensteini Hercegség",
+                    "common": "Liechtenstein"
+                },
+                "ita": {
+                    "official": "Principato del Liechtenstein",
+                    "common": "Liechtenstein"
+                },
+                "jpn": {
+                    "official": "リヒテンシュタイン公国",
+                    "common": "リヒテンシュタイン"
+                },
+                "kor": {
+                    "official": "리히텐슈타인 공국",
+                    "common": "리히텐슈타인"
+                },
+                "nld": {
+                    "official": "Vorstendom Liechtenstein",
+                    "common": "Liechtenstein"
+                },
+                "per": {
+                    "official": "شاهزاده‌نشین لیختن‌اشتاین",
+                    "common": "لیختن‌اشتاین"
+                },
+                "pol": {
+                    "official": "Księstwo Liechtensteinu",
+                    "common": "Liechtenstein"
+                },
+                "por": {
+                    "official": "Principado de Liechtenstein",
+                    "common": "Liechtenstein"
+                },
+                "rus": {
+                    "official": "Княжество Лихтенштейн",
+                    "common": "Лихтенштейн"
+                },
+                "slk": {
+                    "official": "Lichtenštajnské kniežatstvo",
+                    "common": "Lichtenštajnsko"
+                },
+                "spa": {
+                    "official": "Principado de Liechtenstein",
+                    "common": "Liechtenstein"
+                },
+                "swe": {
+                    "official": "Furstendömet Liechtenstein",
+                    "common": "Liechtenstein"
+                },
+                "urd": {
+                    "official": "امارات لیختینستائن",
+                    "common": "لیختینستائن"
+                },
+                "zho": {
+                    "official": "列支敦士登公国",
+                    "common": "列支敦士登"
+                }
+            },
+            "latlng": [47.26666666, 9.53333333],
+            "landlocked": true,
+            "borders": ["AUT", "CHE"],
+            "area": 160.0,
+            "demonyms": {
+                "eng": {
+                    "f": "Liechtensteiner",
+                    "m": "Liechtensteiner"
+                },
+                "fra": {
+                    "f": "Liechtensteinoise",
+                    "m": "Liechtensteinois"
+                }
+            },
+            "flag": "🇱🇮",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/KNuHeiJzAPodwM7y6",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/1155955"
+            },
+            "population": 38137,
+            "fifa": "LIE",
+            "car": {
+                "signs": ["FL"],
+                "side": "right"
+            },
+            "timezones": ["UTC+01:00"],
+            "continents": ["Europe"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/li.png",
+                "svg": "https://flagcdn.com/li.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/li.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/li.svg"
+            },
+            "startOfWeek": "monday",
+            "capitalInfo": {
+                "latlng": [47.13, 9.52]
+            },
+            "postalCode": {
+                "format": "####",
+                "regex": "^(\\d{4})$"
+            }
+        },
+        {
+            "name": {
+                "common": "Moldova",
+                "official": "Republic of Moldova",
+                "nativeName": {
+                    "ron": {
+                        "official": "Republica Moldova",
+                        "common": "Moldova"
+                    }
+                }
+            },
+            "tld": [".md"],
+            "cca2": "MD",
+            "ccn3": "498",
+            "cca3": "MDA",
+            "cioc": "MDA",
+            "independent": true,
+            "status": "officially-assigned",
+            "unMember": true,
+            "currencies": {
+                "MDL": {
+                    "name": "Moldovan leu",
+                    "symbol": "L"
+                }
+            },
+            "idd": {
+                "root": "+3",
+                "suffixes": ["73"]
+            },
+            "capital": ["Chișinău"],
+            "altSpellings": [
+                "MD",
+                "Moldova, Republic of",
+                "Republic of Moldova",
+                "Republica Moldova"
+            ],
+            "region": "Europe",
+            "subregion": "Eastern Europe",
+            "languages": {
+                "ron": "Moldavian"
+            },
+            "translations": {
+                "ara": {
+                    "official": "جمهورية مولدوڤا",
+                    "common": "مولدوڤا"
+                },
+                "ces": {
+                    "official": "Moldavská republika",
+                    "common": "Moldavsko"
+                },
+                "cym": {
+                    "official": "Republic of Moldova",
+                    "common": "Moldova"
+                },
+                "deu": {
+                    "official": "Republik Moldau",
+                    "common": "Moldawien"
+                },
+                "est": {
+                    "official": "Moldova Vabariik",
+                    "common": "Moldova"
+                },
+                "fin": {
+                    "official": "Moldovan tasavalta",
+                    "common": "Moldova"
+                },
+                "fra": {
+                    "official": "République de Moldavie",
+                    "common": "Moldavie"
+                },
+                "hrv": {
+                    "official": "Moldavija",
+                    "common": "Moldova"
+                },
+                "hun": {
+                    "official": "Moldovai Köztársaság",
+                    "common": "Moldova"
+                },
+                "ita": {
+                    "official": "Repubblica di Moldova",
+                    "common": "Moldavia"
+                },
+                "jpn": {
+                    "official": "モルドバ共和国",
+                    "common": "モルドバ共和国"
+                },
+                "kor": {
+                    "official": "몰도바 공화국",
+                    "common": "몰도바"
+                },
+                "nld": {
+                    "official": "Republiek Moldavië",
+                    "common": "Moldavië"
+                },
+                "per": {
+                    "official": "جمهوری مولداوی",
+                    "common": "مولداوی"
+                },
+                "pol": {
+                    "official": "Republika Mołdawii",
+                    "common": "Mołdawia"
+                },
+                "por": {
+                    "official": "República da Moldávia",
+                    "common": "Moldávia"
+                },
+                "rus": {
+                    "official": "Молдова",
+                    "common": "Молдавия"
+                },
+                "slk": {
+                    "official": "Moldavská republika",
+                    "common": "Moldavsko"
+                },
+                "spa": {
+                    "official": "República de Moldova",
+                    "common": "Moldavia"
+                },
+                "swe": {
+                    "official": "Republiken Moldavien",
+                    "common": "Moldavien"
+                },
+                "urd": {
+                    "official": "جمہوریہ مالدووا",
+                    "common": "مالدووا"
+                },
+                "zho": {
+                    "official": "摩尔多瓦共和国",
+                    "common": "摩尔多瓦"
+                }
+            },
+            "latlng": [47.0, 29.0],
+            "landlocked": true,
+            "borders": ["ROU", "UKR"],
+            "area": 33846.0,
+            "demonyms": {
+                "eng": {
+                    "f": "Moldovan",
+                    "m": "Moldovan"
+                },
+                "fra": {
+                    "f": "Moldave",
+                    "m": "Moldave"
+                }
+            },
+            "flag": "🇲🇩",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/JjmyUuULujnDeFPf7",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/58974"
+            },
+            "population": 2617820,
+            "gini": {
+                "2018": 25.7
+            },
+            "fifa": "MDA",
+            "car": {
+                "signs": ["MD"],
+                "side": "right"
+            },
+            "timezones": ["UTC+02:00"],
+            "continents": ["Europe"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/md.png",
+                "svg": "https://flagcdn.com/md.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/md.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/md.svg"
+            },
+            "startOfWeek": "monday",
+            "capitalInfo": {
+                "latlng": [47.01, 28.9]
+            },
+            "postalCode": {
+                "format": "MD-####",
+                "regex": "^(?:MD)*(\\d{4})$"
+            }
+        },
+        {
+            "name": {
+                "common": "Angola",
+                "official": "Republic of Angola",
+                "nativeName": {
+                    "por": {
+                        "official": "República de Angola",
+                        "common": "Angola"
+                    }
+                }
+            },
+            "tld": [".ao"],
+            "cca2": "AO",
+            "ccn3": "024",
+            "cca3": "AGO",
+            "cioc": "ANG",
+            "independent": true,
+            "status": "officially-assigned",
+            "unMember": true,
+            "currencies": {
+                "AOA": {
+                    "name": "Angolan kwanza",
+                    "symbol": "Kz"
+                }
+            },
+            "idd": {
+                "root": "+2",
+                "suffixes": ["44"]
+            },
+            "capital": ["Luanda"],
+            "altSpellings": [
+                "AO",
+                "República de Angola",
+                "ʁɛpublika de an'ɡɔla"
+            ],
+            "region": "Africa",
+            "subregion": "Middle Africa",
+            "languages": {
+                "por": "Portuguese"
+            },
+            "translations": {
+                "ara": {
+                    "official": "أنغولا",
+                    "common": "جمهورية أنغولا"
+                },
+                "ces": {
+                    "official": "Angolská republika",
+                    "common": "Angola"
+                },
+                "cym": {
+                    "official": "Gweriniaeth Angola",
+                    "common": "Angola"
+                },
+                "deu": {
+                    "official": "Republik Angola",
+                    "common": "Angola"
+                },
+                "est": {
+                    "official": "Angola Vabariik",
+                    "common": "Angola"
+                },
+                "fin": {
+                    "official": "Angolan tasavalta",
+                    "common": "Angola"
+                },
+                "fra": {
+                    "official": "République d'Angola",
+                    "common": "Angola"
+                },
+                "hrv": {
+                    "official": "Republika Angola",
+                    "common": "Angola"
+                },
+                "hun": {
+                    "official": "Angola",
+                    "common": "Angola"
+                },
+                "ita": {
+                    "official": "Repubblica dell'Angola",
+                    "common": "Angola"
+                },
+                "jpn": {
+                    "official": "アンゴラ共和国",
+                    "common": "アンゴラ"
+                },
+                "kor": {
+                    "official": "앙골라 공화국",
+                    "common": "앙골라"
+                },
+                "nld": {
+                    "official": "Republiek Angola",
+                    "common": "Angola"
+                },
+                "per": {
+                    "official": "جمهوری آنگولا",
+                    "common": "آنگولا"
+                },
+                "pol": {
+                    "official": "Republika Angoli",
+                    "common": "Angola"
+                },
+                "por": {
+                    "official": "República de Angola",
+                    "common": "Angola"
+                },
+                "rus": {
+                    "official": "Республика Ангола",
+                    "common": "Ангола"
+                },
+                "slk": {
+                    "official": "Angolská republika",
+                    "common": "Angola"
+                },
+                "spa": {
+                    "official": "República de Angola",
+                    "common": "Angola"
+                },
+                "swe": {
+                    "official": "Republiken Angola",
+                    "common": "Angola"
+                },
+                "urd": {
+                    "official": "جمہوریہ انگولہ",
+                    "common": "انگولہ"
+                },
+                "zho": {
+                    "official": "安哥拉共和国",
+                    "common": "安哥拉"
+                }
+            },
+            "latlng": [-12.5, 18.5],
+            "landlocked": false,
+            "borders": ["COG", "COD", "ZMB", "NAM"],
+            "area": 1246700.0,
+            "demonyms": {
+                "eng": {
+                    "f": "Angolan",
+                    "m": "Angolan"
+                },
+                "fra": {
+                    "f": "Angolaise",
+                    "m": "Angolais"
+                }
+            },
+            "flag": "🇦🇴",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/q42Qbf1BmQL3fuZg9",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/195267"
+            },
+            "population": 32866268,
+            "gini": {
+                "2018": 51.3
+            },
+            "fifa": "ANG",
+            "car": {
+                "signs": ["ANG"],
+                "side": "right"
+            },
+            "timezones": ["UTC+01:00"],
+            "continents": ["Africa"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/ao.png",
+                "svg": "https://flagcdn.com/ao.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/ao.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/ao.svg"
+            },
+            "startOfWeek": "monday",
+            "capitalInfo": {
+                "latlng": [-8.83, 13.22]
+            }
+        },
+        {
+            "name": {
+                "common": "Bolivia",
+                "official": "Plurinational State of Bolivia",
+                "nativeName": {
+                    "aym": {
+                        "official": "Wuliwya Suyu",
+                        "common": "Wuliwya"
+                    },
+                    "grn": {
+                        "official": "Tetã Volívia",
+                        "common": "Volívia"
+                    },
+                    "que": {
+                        "official": "Buliwya Mamallaqta",
+                        "common": "Buliwya"
+                    },
+                    "spa": {
+                        "official": "Estado Plurinacional de Bolivia",
+                        "common": "Bolivia"
+                    }
+                }
+            },
+            "tld": [".bo"],
+            "cca2": "BO",
+            "ccn3": "068",
+            "cca3": "BOL",
+            "cioc": "BOL",
+            "independent": true,
+            "status": "officially-assigned",
+            "unMember": true,
+            "currencies": {
+                "BOB": {
+                    "name": "Bolivian boliviano",
+                    "symbol": "Bs."
+                }
+            },
+            "idd": {
+                "root": "+5",
+                "suffixes": ["91"]
+            },
+            "capital": ["Sucre"],
+            "altSpellings": [
+                "BO",
+                "Buliwya",
+                "Wuliwya",
+                "Bolivia, Plurinational State of",
+                "Plurinational State of Bolivia",
+                "Estado Plurinacional de Bolivia",
+                "Buliwya Mamallaqta",
+                "Wuliwya Suyu",
+                "Tetã Volívia"
+            ],
+            "region": "Americas",
+            "subregion": "South America",
+            "languages": {
+                "aym": "Aymara",
+                "grn": "Guaraní",
+                "que": "Quechua",
+                "spa": "Spanish"
+            },
+            "translations": {
+                "ara": {
+                    "official": "دولة بوليفيا المتعددة القوميات",
+                    "common": "بوليفيا"
+                },
+                "ces": {
+                    "official": "Mnohonárodnostní stát Bolívie",
+                    "common": "Bolívie"
+                },
+                "cym": {
+                    "official": "Gweriniaeth Bolifia",
+                    "common": "Bolifia"
+                },
+                "deu": {
+                    "official": "Plurinationaler Staat Bolivien",
+                    "common": "Bolivien"
+                },
+                "est": {
+                    "official": "Boliivia Paljurahvuseline Riik",
+                    "common": "Boliivia"
+                },
+                "fin": {
+                    "official": "Bolivian monikansainen valtio",
+                    "common": "Bolivia"
+                },
+                "fra": {
+                    "official": "État plurinational de Bolivie",
+                    "common": "Bolivie"
+                },
+                "hrv": {
+                    "official": "Plurinational State of Bolivia",
+                    "common": "Bolivija"
+                },
+                "hun": {
+                    "official": "Bolíviai Többnemzetiségű Állam",
+                    "common": "Bolívia"
+                },
+                "ita": {
+                    "official": "Stato Plurinazionale della Bolivia",
+                    "common": "Bolivia"
+                },
+                "jpn": {
+                    "official": "ボリビアの多民族国",
+                    "common": "ボリビア多民族国"
+                },
+                "kor": {
+                    "official": "볼리비아 다민족국",
+                    "common": "볼리비아"
+                },
+                "nld": {
+                    "official": "Plurinationale Staat van Bolivia",
+                    "common": "Bolivia"
+                },
+                "per": {
+                    "official": "جمهوری بولیوی",
+                    "common": "بولیوی"
+                },
+                "pol": {
+                    "official": "Wielonarodowe Państwo Boliwia",
+                    "common": "Boliwia"
+                },
+                "por": {
+                    "official": "Estado Plurinacional da Bolívia",
+                    "common": "Bolívia"
+                },
+                "rus": {
+                    "official": "Многонациональное Государство Боливия",
+                    "common": "Боливия"
+                },
+                "slk": {
+                    "official": "Bolívijská republika",
+                    "common": "Bolívia"
+                },
+                "spa": {
+                    "official": "Estado Plurinacional de Bolivia",
+                    "common": "Bolivia"
+                },
+                "swe": {
+                    "official": "Mångnationella staten Bolivia",
+                    "common": "Bolivia"
+                },
+                "urd": {
+                    "official": "جمہوریہ بولیویا",
+                    "common": "بولیویا"
+                },
+                "zho": {
+                    "official": "多民族玻利维亚国",
+                    "common": "玻利维亚"
+                }
+            },
+            "latlng": [-17.0, -65.0],
+            "landlocked": true,
+            "borders": ["ARG", "BRA", "CHL", "PRY", "PER"],
+            "area": 1098581.0,
+            "demonyms": {
+                "eng": {
+                    "f": "Bolivian",
+                    "m": "Bolivian"
+                },
+                "fra": {
+                    "f": "Bolivienne",
+                    "m": "Bolivien"
+                }
+            },
+            "flag": "🇧🇴",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/9DfnyfbxNM2g5U9b9",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/252645"
+            },
+            "population": 11673029,
+            "gini": {
+                "2019": 41.6
+            },
+            "fifa": "BOL",
+            "car": {
+                "signs": ["BOL"],
+                "side": "right"
+            },
+            "timezones": ["UTC-04:00"],
+            "continents": ["South America"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/bo.png",
+                "svg": "https://flagcdn.com/bo.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/bo.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/bo.svg"
+            },
+            "startOfWeek": "monday",
+            "capitalInfo": {
+                "latlng": [-19.02, -65.26]
+            }
+        },
+        {
+            "name": {
+                "common": "Tuvalu",
+                "official": "Tuvalu",
+                "nativeName": {
+                    "eng": {
+                        "official": "Tuvalu",
+                        "common": "Tuvalu"
+                    },
+                    "tvl": {
+                        "official": "Tuvalu",
+                        "common": "Tuvalu"
+                    }
+                }
+            },
+            "tld": [".tv"],
+            "cca2": "TV",
+            "ccn3": "798",
+            "cca3": "TUV",
+            "cioc": "TUV",
+            "independent": true,
+            "status": "officially-assigned",
+            "unMember": true,
+            "currencies": {
+                "AUD": {
+                    "name": "Australian dollar",
+                    "symbol": "$"
+                },
+                "TVD": {
+                    "name": "Tuvaluan dollar",
+                    "symbol": "$"
+                }
+            },
+            "idd": {
+                "root": "+6",
+                "suffixes": ["88"]
+            },
+            "capital": ["Funafuti"],
+            "altSpellings": ["TV"],
+            "region": "Oceania",
+            "subregion": "Polynesia",
+            "languages": {
+                "eng": "English",
+                "tvl": "Tuvaluan"
+            },
+            "translations": {
+                "ara": {
+                    "official": "توفالو",
+                    "common": "توفالو"
+                },
+                "ces": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "cym": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "deu": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "est": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "fin": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "fra": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "hrv": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "hun": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "ita": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "jpn": {
+                    "official": "ツバル",
+                    "common": "ツバル"
+                },
+                "kor": {
+                    "official": "투발루",
+                    "common": "투발루"
+                },
+                "nld": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "per": {
+                    "official": "تووالو",
+                    "common": "تووالو"
+                },
+                "pol": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "por": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "rus": {
+                    "official": "Тувалу",
+                    "common": "Тувалу"
+                },
+                "slk": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "spa": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "swe": {
+                    "official": "Tuvalu",
+                    "common": "Tuvalu"
+                },
+                "urd": {
+                    "official": "تووالو",
+                    "common": "تووالو"
+                },
+                "zho": {
+                    "official": "图瓦卢",
+                    "common": "图瓦卢"
+                }
+            },
+            "latlng": [-8.0, 178.0],
+            "landlocked": false,
+            "area": 26.0,
+            "demonyms": {
+                "eng": {
+                    "f": "Tuvaluan",
+                    "m": "Tuvaluan"
+                },
+                "fra": {
+                    "f": "Tuvaluane",
+                    "m": "Tuvaluan"
+                }
+            },
+            "flag": "🇹🇻",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/LbuUxtkgm1dfN1Pn6",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/2177266"
+            },
+            "population": 11792,
+            "gini": {
+                "2010": 39.1
+            },
+            "car": {
+                "signs": ["TUV"],
+                "side": "left"
+            },
+            "timezones": ["UTC+12:00"],
+            "continents": ["Oceania"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/tv.png",
+                "svg": "https://flagcdn.com/tv.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/tv.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/tv.svg"
+            },
+            "startOfWeek": "monday",
+            "capitalInfo": {
+                "latlng": [-8.52, 179.22]
+            }
+        },
+        {
+            "name": {
+                "common": "Peru",
+                "official": "Republic of Peru",
+                "nativeName": {
+                    "aym": {
+                        "official": "Piruw Suyu",
+                        "common": "Piruw"
+                    },
+                    "que": {
+                        "official": "Piruw Ripuwlika",
+                        "common": "Piruw"
+                    },
+                    "spa": {
+                        "official": "República del Perú",
+                        "common": "Perú"
+                    }
+                }
+            },
+            "tld": [".pe"],
+            "cca2": "PE",
+            "ccn3": "604",
+            "cca3": "PER",
+            "cioc": "PER",
+            "independent": true,
+            "status": "officially-assigned",
+            "unMember": true,
+            "currencies": {
+                "PEN": {
+                    "name": "Peruvian sol",
+                    "symbol": "S/ "
+                }
+            },
+            "idd": {
+                "root": "+5",
+                "suffixes": ["1"]
+            },
+            "capital": ["Lima"],
+            "altSpellings": ["PE", "Republic of Peru", "República del Perú"],
+            "region": "Americas",
+            "subregion": "South America",
+            "languages": {
+                "aym": "Aymara",
+                "que": "Quechua",
+                "spa": "Spanish"
+            },
+            "translations": {
+                "ara": {
+                    "official": "جمهورية بيرو",
+                    "common": "بيرو"
+                },
+                "ces": {
+                    "official": "Peruánská republika",
+                    "common": "Peru"
+                },
+                "cym": {
+                    "official": "Republic of Peru",
+                    "common": "Peru"
+                },
+                "deu": {
+                    "official": "Republik Peru",
+                    "common": "Peru"
+                },
+                "est": {
+                    "official": "Peruu Vabariik",
+                    "common": "Peruu"
+                },
+                "fin": {
+                    "official": "Perun tasavalta",
+                    "common": "Peru"
+                },
+                "fra": {
+                    "official": "République du Pérou",
+                    "common": "Pérou"
+                },
+                "hrv": {
+                    "official": "Republika Peru",
+                    "common": "Peru"
+                },
+                "hun": {
+                    "official": "Perui Köztársaság",
+                    "common": "Peru"
+                },
+                "ita": {
+                    "official": "Repubblica del Perù",
+                    "common": "Perù"
+                },
+                "jpn": {
+                    "official": "ペルー共和国",
+                    "common": "ペルー"
+                },
+                "kor": {
+                    "official": "페루 공화국",
+                    "common": "페루"
+                },
+                "nld": {
+                    "official": "Republiek Peru",
+                    "common": "Peru"
+                },
+                "per": {
+                    "official": "جمهوری پرو",
+                    "common": "پرو"
+                },
+                "pol": {
+                    "official": "Republika Peru",
+                    "common": "Peru"
+                },
+                "por": {
+                    "official": "República do Peru",
+                    "common": "Perú"
+                },
+                "rus": {
+                    "official": "Республика Перу",
+                    "common": "Перу"
+                },
+                "slk": {
+                    "official": "Peruánska republika",
+                    "common": "Peru"
+                },
+                "spa": {
+                    "official": "República de Perú",
+                    "common": "Perú"
+                },
+                "swe": {
+                    "official": "Republiken Peru",
+                    "common": "Peru"
+                },
+                "urd": {
+                    "official": "جمہوریہ پیرو",
+                    "common": "پیرو"
+                },
+                "zho": {
+                    "official": "秘鲁共和国",
+                    "common": "秘鲁"
+                }
+            },
+            "latlng": [-10.0, -76.0],
+            "landlocked": false,
+            "borders": ["BOL", "BRA", "CHL", "COL", "ECU"],
+            "area": 1285216.0,
+            "demonyms": {
+                "eng": {
+                    "f": "Peruvian",
+                    "m": "Peruvian"
+                },
+                "fra": {
+                    "f": "Péruvienne",
+                    "m": "Péruvien"
+                }
+            },
+            "flag": "🇵🇪",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/uDWEUaXNcZTng1fP6",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/288247"
+            },
+            "population": 32971846,
+            "gini": {
+                "2019": 41.5
+            },
+            "fifa": "PER",
+            "car": {
+                "signs": ["PE"],
+                "side": "right"
+            },
+            "timezones": ["UTC-05:00"],
+            "continents": ["South America"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/pe.png",
+                "svg": "https://flagcdn.com/pe.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/pe.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/pe.svg"
+            },
+            "startOfWeek": "monday",
+            "capitalInfo": {
+                "latlng": [-12.05, -77.05]
+            },
+            "postalCode": {
+                "format": "#####",
+                "regex": "^(\\d{5})$"
+            }
+        },
+        {
+            "name": {
+                "common": "New Caledonia",
+                "official": "New Caledonia",
+                "nativeName": {
+                    "fra": {
+                        "official": "Nouvelle-Calédonie",
+                        "common": "Nouvelle-Calédonie"
+                    }
+                }
+            },
+            "tld": [".nc"],
+            "cca2": "NC",
+            "ccn3": "540",
+            "cca3": "NCL",
+            "independent": false,
+            "status": "officially-assigned",
+            "unMember": false,
+            "currencies": {
+                "XPF": {
+                    "name": "CFP franc",
+                    "symbol": "₣"
+                }
+            },
+            "idd": {
+                "root": "+6",
+                "suffixes": ["87"]
+            },
+            "capital": ["Nouméa"],
+            "altSpellings": ["NC"],
+            "region": "Oceania",
+            "subregion": "Melanesia",
+            "languages": {
+                "fra": "French"
+            },
+            "translations": {
+                "ara": {
+                    "official": "كاليدونيا الجديدة",
+                    "common": "كاليدونيا الجديدة"
+                },
+                "ces": {
+                    "official": "Nová Kaledonie",
+                    "common": "Nová Kaledonie"
+                },
+                "cym": {
+                    "official": "New Caledonia",
+                    "common": "New Caledonia"
+                },
+                "deu": {
+                    "official": "Neukaledonien",
+                    "common": "Neukaledonien"
+                },
+                "est": {
+                    "official": "Uus-Kaledoonia",
+                    "common": "Uus-Kaledoonia"
+                },
+                "fin": {
+                    "official": "Uusi-Kaledonia",
+                    "common": "Uusi-Kaledonia"
+                },
+                "fra": {
+                    "official": "Nouvelle-Calédonie",
+                    "common": "Nouvelle-Calédonie"
+                },
+                "hrv": {
+                    "official": "Nova Kaledonija",
+                    "common": "Nova Kaledonija"
+                },
+                "hun": {
+                    "official": "Új-Kaledónia",
+                    "common": "Új-Kaledónia"
+                },
+                "ita": {
+                    "official": "Nuova Caledonia",
+                    "common": "Nuova Caledonia"
+                },
+                "jpn": {
+                    "official": "ニューカレドニア",
+                    "common": "ニューカレドニア"
+                },
+                "kor": {
+                    "official": "누벨칼레도니",
+                    "common": "누벨칼레도니"
+                },
+                "nld": {
+                    "official": "nieuw -Caledonië",
+                    "common": "Nieuw-Caledonië"
+                },
+                "per": {
+                    "official": "کالدونیای جدید",
+                    "common": "کالدونیای جدید"
+                },
+                "pol": {
+                    "official": "Nowa Kaledonia",
+                    "common": "Nowa Kaledonia"
+                },
+                "por": {
+                    "official": "New Caledonia",
+                    "common": "Nova Caledónia"
+                },
+                "rus": {
+                    "official": "Новая Каледония",
+                    "common": "Новая Каледония"
+                },
+                "slk": {
+                    "official": "Nová Kaledónia",
+                    "common": "Nová Kaledónia"
+                },
+                "spa": {
+                    "official": "nueva Caledonia",
+                    "common": "Nueva Caledonia"
+                },
+                "swe": {
+                    "official": "Nya Kaledonien",
+                    "common": "Nya Kaledonien"
+                },
+                "urd": {
+                    "official": "نیو کیلیڈونیا",
+                    "common": "نیو کیلیڈونیا"
+                },
+                "zho": {
+                    "official": "新喀里多尼亚",
+                    "common": "新喀里多尼亚"
+                }
+            },
+            "latlng": [-21.5, 165.5],
+            "landlocked": false,
+            "area": 18575.0,
+            "demonyms": {
+                "eng": {
+                    "f": "New Caledonian",
+                    "m": "New Caledonian"
+                },
+                "fra": {
+                    "f": "Néo-Calédonienne",
+                    "m": "Néo-Calédonien"
+                }
+            },
+            "flag": "🇳🇨",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/cBhtCeMdob4U7FRU9",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/3407643"
+            },
+            "population": 271960,
+            "fifa": "NCL",
+            "car": {
+                "signs": ["F"],
+                "side": "right"
+            },
+            "timezones": ["UTC+11:00"],
+            "continents": ["Oceania"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/nc.png",
+                "svg": "https://flagcdn.com/nc.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/nc.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/nc.svg"
+            },
+            "startOfWeek": "monday",
+            "capitalInfo": {
+                "latlng": [-22.27, 166.45]
+            },
+            "postalCode": {
+                "format": "#####",
+                "regex": "^(\\d{5})$"
+            }
+        },
+        {
+            "name": {
+                "common": "Germany",
+                "official": "Federal Republic of Germany",
+                "nativeName": {
+                    "deu": {
+                        "official": "Bundesrepublik Deutschland",
+                        "common": "Deutschland"
+                    }
+                }
+            },
+            "tld": [".de"],
+            "cca2": "DE",
+            "ccn3": "276",
+            "cca3": "DEU",
+            "cioc": "GER",
+            "independent": true,
+            "status": "officially-assigned",
+            "unMember": true,
+            "currencies": {
+                "EUR": {
+                    "name": "Euro",
+                    "symbol": "€"
+                }
+            },
+            "idd": {
+                "root": "+4",
+                "suffixes": ["9"]
+            },
+            "capital": ["Berlin"],
+            "altSpellings": [
+                "DE",
+                "Federal Republic of Germany",
+                "Bundesrepublik Deutschland"
+            ],
+            "region": "Europe",
+            "subregion": "Western Europe",
+            "languages": {
+                "deu": "German"
+            },
+            "translations": {
+                "ara": {
+                    "official": "جمهورية ألمانيا الاتحادية",
+                    "common": "ألمانيا"
+                },
+                "ces": {
+                    "official": "Spolková republika Německo",
+                    "common": "Německo"
+                },
+                "cym": {
+                    "official": "Federal Republic of Germany",
+                    "common": "Germany"
+                },
+                "deu": {
+                    "official": "Bundesrepublik Deutschland",
+                    "common": "Deutschland"
+                },
+                "est": {
+                    "official": "Saksamaa Liitvabariik",
+                    "common": "Saksamaa"
+                },
+                "fin": {
+                    "official": "Saksan liittotasavalta",
+                    "common": "Saksa"
+                },
+                "fra": {
+                    "official": "République fédérale d'Allemagne",
+                    "common": "Allemagne"
+                },
+                "hrv": {
+                    "official": "Njemačka Federativna Republika",
+                    "common": "Njemačka"
+                },
+                "hun": {
+                    "official": "Német Szövetségi Köztársaság",
+                    "common": "Németország"
+                },
+                "ita": {
+                    "official": "Repubblica federale di Germania",
+                    "common": "Germania"
+                },
+                "jpn": {
+                    "official": "ドイツ連邦共和国",
+                    "common": "ドイツ"
+                },
+                "kor": {
+                    "official": "독일 연방 공화국",
+                    "common": "독일"
+                },
+                "nld": {
+                    "official": "Bondsrepubliek Duitsland",
+                    "common": "Duitsland"
+                },
+                "per": {
+                    "official": "جمهوری فدرال آلمان",
+                    "common": "آلمان"
+                },
+                "pol": {
+                    "official": "Republika Federalna Niemiec",
+                    "common": "Niemcy"
+                },
+                "por": {
+                    "official": "República Federal da Alemanha",
+                    "common": "Alemanha"
+                },
+                "rus": {
+                    "official": "Федеративная Республика Германия",
+                    "common": "Германия"
+                },
+                "slk": {
+                    "official": "Nemecká spolková republika",
+                    "common": "Nemecko"
+                },
+                "spa": {
+                    "official": "República Federal de Alemania",
+                    "common": "Alemania"
+                },
+                "swe": {
+                    "official": "Förbundsrepubliken Tyskland",
+                    "common": "Tyskland"
+                },
+                "urd": {
+                    "official": "وفاقی جمہوریہ جرمنی",
+                    "common": "جرمنی"
+                },
+                "zho": {
+                    "official": "德意志联邦共和国",
+                    "common": "德国"
+                }
+            },
+            "latlng": [51.0, 9.0],
+            "landlocked": false,
+            "borders": [
+                "AUT",
+                "BEL",
+                "CZE",
+                "DNK",
+                "FRA",
+                "LUX",
+                "NLD",
+                "POL",
+                "CHE"
+            ],
+            "area": 357114.0,
+            "demonyms": {
+                "eng": {
+                    "f": "German",
+                    "m": "German"
+                },
+                "fra": {
+                    "f": "Allemande",
+                    "m": "Allemand"
+                }
+            },
+            "flag": "🇩🇪",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/mD9FBMq1nvXUBrkv6",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/51477"
+            },
+            "population": 83240525,
+            "gini": {
+                "2016": 31.9
+            },
+            "fifa": "GER",
+            "car": {
+                "signs": ["DY"],
+                "side": "right"
+            },
+            "timezones": ["UTC+01:00"],
+            "continents": ["Europe"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/de.png",
+                "svg": "https://flagcdn.com/de.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/de.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/de.svg"
+            },
+            "startOfWeek": "monday",
+            "capitalInfo": {
+                "latlng": [52.52, 13.4]
+            },
+            "postalCode": {
+                "format": "#####",
+                "regex": "^(\\d{5})$"
+            }
+        },
+        {
+            "name": {
+                "common": "Botswana",
+                "official": "Republic of Botswana",
+                "nativeName": {
+                    "eng": {
+                        "official": "Republic of Botswana",
+                        "common": "Botswana"
+                    },
+                    "tsn": {
+                        "official": "Lefatshe la Botswana",
+                        "common": "Botswana"
+                    }
+                }
+            },
+            "tld": [".bw"],
+            "cca2": "BW",
+            "ccn3": "072",
+            "cca3": "BWA",
+            "cioc": "BOT",
+            "independent": true,
+            "status": "officially-assigned",
+            "unMember": true,
+            "currencies": {
+                "BWP": {
+                    "name": "Botswana pula",
+                    "symbol": "P"
+                }
+            },
+            "idd": {
+                "root": "+2",
+                "suffixes": ["67"]
+            },
+            "capital": ["Gaborone"],
+            "altSpellings": [
+                "BW",
+                "Republic of Botswana",
+                "Lefatshe la Botswana"
+            ],
+            "region": "Africa",
+            "subregion": "Southern Africa",
+            "languages": {
+                "eng": "English",
+                "tsn": "Tswana"
+            },
+            "translations": {
+                "ara": {
+                    "official": "جمهورية بوتسوانا",
+                    "common": "بوتسوانا"
+                },
+                "ces": {
+                    "official": "Botswanská republika",
+                    "common": "Botswana"
+                },
+                "cym": {
+                    "official": "Republic of Botswana",
+                    "common": "Botswana"
+                },
+                "deu": {
+                    "official": "Republik Botsuana",
+                    "common": "Botswana"
+                },
+                "est": {
+                    "official": "Botswana Vabariik",
+                    "common": "Botswana"
+                },
+                "fin": {
+                    "official": "Botswanan tasavalta",
+                    "common": "Botswana"
+                },
+                "fra": {
+                    "official": "République du Botswana",
+                    "common": "Botswana"
+                },
+                "hrv": {
+                    "official": "Republika Bocvana",
+                    "common": "Bocvana"
+                },
+                "hun": {
+                    "official": "Botswanai Köztársaság",
+                    "common": "Botswana"
+                },
+                "ita": {
+                    "official": "Repubblica del Botswana",
+                    "common": "Botswana"
+                },
+                "jpn": {
+                    "official": "ボツワナ共和国",
+                    "common": "ボツワナ"
+                },
+                "kor": {
+                    "official": "보츠와나 공화국",
+                    "common": "보츠와나"
+                },
+                "nld": {
+                    "official": "Republiek Botswana",
+                    "common": "Botswana"
+                },
+                "per": {
+                    "official": "جمهوری بوتسوانا",
+                    "common": "بوتسوانا"
+                },
+                "pol": {
+                    "official": "Republika Botswany",
+                    "common": "Botswana"
+                },
+                "por": {
+                    "official": "República do Botswana",
+                    "common": "Botswana"
+                },
+                "rus": {
+                    "official": "Республика Ботсвана",
+                    "common": "Ботсвана"
+                },
+                "slk": {
+                    "official": "Botswanská republika",
+                    "common": "Botswana"
+                },
+                "spa": {
+                    "official": "República de Botswana",
+                    "common": "Botswana"
+                },
+                "swe": {
+                    "official": "Republiken Botswana",
+                    "common": "Botswana"
+                },
+                "urd": {
+                    "official": "جمہوریہ بوٹسوانا",
+                    "common": "بوٹسوانا"
+                },
+                "zho": {
+                    "official": "博茨瓦纳共和国",
+                    "common": "博茨瓦纳"
+                }
+            },
+            "latlng": [-22.0, 24.0],
+            "landlocked": true,
+            "borders": ["NAM", "ZAF", "ZMB", "ZWE"],
+            "area": 582000.0,
+            "demonyms": {
+                "eng": {
+                    "f": "Motswana",
+                    "m": "Motswana"
+                },
+                "fra": {
+                    "f": "Botswanaise",
+                    "m": "Botswanais"
+                }
+            },
+            "flag": "🇧🇼",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/E364KeLy6N4JwxwQ8",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/1889339"
+            },
+            "population": 2351625,
+            "gini": {
+                "2015": 53.3
+            },
+            "fifa": "BOT",
+            "car": {
+                "signs": ["BW"],
+                "side": "left"
+            },
+            "timezones": ["UTC+02:00"],
+            "continents": ["Africa"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/bw.png",
+                "svg": "https://flagcdn.com/bw.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/bw.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/bw.svg"
+            },
+            "startOfWeek": "monday",
+            "capitalInfo": {
+                "latlng": [-24.63, 25.9]
+            }
+        },
+        {
+            "name": {
+                "common": "Afghanistan",
+                "official": "Islamic Republic of Afghanistan",
+                "nativeName": {
+                    "prs": {
+                        "official": "جمهوری اسلامی افغانستان",
+                        "common": "افغانستان"
+                    },
+                    "pus": {
+                        "official": "د افغانستان اسلامي جمهوریت",
+                        "common": "افغانستان"
+                    },
+                    "tuk": {
+                        "official": "Owganystan Yslam Respublikasy",
+                        "common": "Owganystan"
+                    }
+                }
+            },
+            "tld": [".af"],
+            "cca2": "AF",
+            "ccn3": "004",
+            "cca3": "AFG",
+            "cioc": "AFG",
+            "independent": true,
+            "status": "officially-assigned",
+            "unMember": true,
+            "currencies": {
+                "AFN": {
+                    "name": "Afghan afghani",
+                    "symbol": "؋"
+                }
+            },
+            "idd": {
+                "root": "+9",
+                "suffixes": ["3"]
+            },
+            "capital": ["Kabul"],
+            "altSpellings": ["AF", "Afġānistān"],
+            "region": "Asia",
+            "subregion": "Southern Asia",
+            "languages": {
+                "prs": "Dari",
+                "pus": "Pashto",
+                "tuk": "Turkmen"
+            },
+            "translations": {
+                "ara": {
+                    "official": "جمهورية أففانستان الإسلامية",
+                    "common": "أفغانستان"
+                },
+                "ces": {
+                    "official": "Afghánská islámská republika",
+                    "common": "Afghánistán"
+                },
+                "cym": {
+                    "official": "Gweriniaeth Islamaidd Affganistan",
+                    "common": "Affganistan"
+                },
+                "deu": {
+                    "official": "Islamische Republik Afghanistan",
+                    "common": "Afghanistan"
+                },
+                "est": {
+                    "official": "Afganistani Islamivabariik",
+                    "common": "Afganistan"
+                },
+                "fin": {
+                    "official": "Afganistanin islamilainen tasavalta",
+                    "common": "Afganistan"
+                },
+                "fra": {
+                    "official": "République islamique d'Afghanistan",
+                    "common": "Afghanistan"
+                },
+                "hrv": {
+                    "official": "Islamska Republika Afganistan",
+                    "common": "Afganistan"
+                },
+                "hun": {
+                    "official": "Afganisztáni Iszlám Köztársaság",
+                    "common": "Afganisztán"
+                },
+                "ita": {
+                    "official": "Repubblica islamica dell'Afghanistan",
+                    "common": "Afghanistan"
+                },
+                "jpn": {
+                    "official": "アフガニスタン·イスラム共和国",
+                    "common": "アフガニスタン"
+                },
+                "kor": {
+                    "official": "아프가니스탄 이슬람 공화국",
+                    "common": "아프가니스탄"
+                },
+                "nld": {
+                    "official": "Islamitische Republiek Afghanistan",
+                    "common": "Afghanistan"
+                },
+                "per": {
+                    "official": "جمهوری اسلامی افغانستان",
+                    "common": "افغانستان"
+                },
+                "pol": {
+                    "official": "Islamska Republika Afganistanu",
+                    "common": "Afganistan"
+                },
+                "por": {
+                    "official": "República Islâmica do Afeganistão",
+                    "common": "Afeganistão"
+                },
+                "rus": {
+                    "official": "Исламская Республика Афганистан",
+                    "common": "Афганистан"
+                },
+                "slk": {
+                    "official": "Afgánsky islamský štát",
+                    "common": "Afganistan"
+                },
+                "spa": {
+                    "official": "República Islámica de Afganistán",
+                    "common": "Afganistán"
+                },
+                "swe": {
+                    "official": "Islamiska republiken Afghanistan",
+                    "common": "Afghanistan"
+                },
+                "urd": {
+                    "official": "اسلامی جمہوریہ افغانستان",
+                    "common": "افغانستان"
+                },
+                "zho": {
+                    "official": "阿富汗伊斯兰共和国",
+                    "common": "阿富汗"
+                }
+            },
+            "latlng": [33.0, 65.0],
+            "landlocked": true,
+            "borders": ["IRN", "PAK", "TKM", "UZB", "TJK", "CHN"],
+            "area": 652230.0,
+            "demonyms": {
+                "eng": {
+                    "f": "Afghan",
+                    "m": "Afghan"
+                },
+                "fra": {
+                    "f": "Afghane",
+                    "m": "Afghan"
+                }
+            },
+            "flag": "🇦🇫",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/BXBGw7yUUFknCfva9",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/303427"
+            },
+            "population": 40218234,
+            "fifa": "AFG",
+            "car": {
+                "signs": ["AFG"],
+                "side": "right"
+            },
+            "timezones": ["UTC+04:30"],
+            "continents": ["Asia"],
+            "flags": {
+                "png": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png",
+                "svg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/af.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/af.svg"
+            },
+            "startOfWeek": "monday",
+            "capitalInfo": {
+                "latlng": [34.52, 69.18]
+            }
+        },
+        {
+            "name": {
+                "common": "Hungary",
+                "official": "Hungary",
+                "nativeName": {
+                    "hun": {
+                        "official": "Magyarország",
+                        "common": "Magyarország"
+                    }
+                }
+            },
+            "tld": [".hu"],
+            "cca2": "HU",
+            "ccn3": "348",
+            "cca3": "HUN",
+            "cioc": "HUN",
+            "independent": true,
+            "status": "officially-assigned",
+            "unMember": true,
+            "currencies": {
+                "HUF": {
+                    "name": "Hungarian forint",
+                    "symbol": "Ft"
+                }
+            },
+            "idd": {
+                "root": "+3",
+                "suffixes": ["6"]
+            },
+            "capital": ["Budapest"],
+            "altSpellings": ["HU"],
+            "region": "Europe",
+            "subregion": "Central Europe",
+            "languages": {
+                "hun": "Hungarian"
+            },
+            "translations": {
+                "ara": {
+                    "official": "الجمهورية المجرية",
+                    "common": "المجر"
+                },
+                "ces": {
+                    "official": "Maďarsko",
+                    "common": "Maďarsko"
+                },
+                "cym": {
+                    "official": "Hungary",
+                    "common": "Hungary"
+                },
+                "deu": {
+                    "official": "Ungarn",
+                    "common": "Ungarn"
+                },
+                "est": {
+                    "official": "Ungari",
+                    "common": "Ungari"
+                },
+                "fin": {
+                    "official": "Unkari",
+                    "common": "Unkari"
+                },
+                "fra": {
+                    "official": "Hongrie",
+                    "common": "Hongrie"
+                },
+                "hrv": {
+                    "official": "Madžarska",
+                    "common": "Mađarska"
+                },
+                "hun": {
+                    "official": "Magyarország",
+                    "common": "Magyarország"
+                },
+                "ita": {
+                    "official": "Ungheria",
+                    "common": "Ungheria"
+                },
+                "jpn": {
+                    "official": "ハンガリー",
+                    "common": "ハンガリー"
+                },
+                "kor": {
+                    "official": "헝가리",
+                    "common": "헝가리"
+                },
+                "nld": {
+                    "official": "Hongarije",
+                    "common": "Hongarije"
+                },
+                "per": {
+                    "official": "مجارستان",
+                    "common": "مجارستان"
+                },
+                "pol": {
+                    "official": "Węgry",
+                    "common": "Węgry"
+                },
+                "por": {
+                    "official": "Hungria",
+                    "common": "Hungria"
+                },
+                "rus": {
+                    "official": "Венгрия",
+                    "common": "Венгрия"
+                },
+                "slk": {
+                    "official": "Maďarsko",
+                    "common": "Maďarsko"
+                },
+                "spa": {
+                    "official": "Hungría",
+                    "common": "Hungría"
+                },
+                "swe": {
+                    "official": "Ungern",
+                    "common": "Ungern"
+                },
+                "urd": {
+                    "official": "مجارستان",
+                    "common": "مجارستان"
+                },
+                "zho": {
+                    "official": "匈牙利",
+                    "common": "匈牙利"
+                }
+            },
+            "latlng": [47.0, 20.0],
+            "landlocked": true,
+            "borders": ["AUT", "HRV", "ROU", "SRB", "SVK", "SVN", "UKR"],
+            "area": 93028.0,
+            "demonyms": {
+                "eng": {
+                    "f": "Hungarian",
+                    "m": "Hungarian"
+                },
+                "fra": {
+                    "f": "Hongroise",
+                    "m": "Hongrois"
+                }
+            },
+            "flag": "🇭🇺",
+            "maps": {
+                "googleMaps": "https://goo.gl/maps/9gfPupm5bffixiFJ6",
+                "openStreetMaps": "https://www.openstreetmap.org/relation/21335"
+            },
+            "population": 9749763,
+            "gini": {
+                "2018": 29.6
+            },
+            "fifa": "HUN",
+            "car": {
+                "signs": ["H"],
+                "side": "right"
+            },
+            "timezones": ["UTC+01:00"],
+            "continents": ["Europe"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/hu.png",
+                "svg": "https://flagcdn.com/hu.svg"
+            },
+            "coatOfArms": {
+                "png": "https://mainfacts.com/media/images/coats_of_arms/hu.png",
+                "svg": "https://mainfacts.com/media/images/coats_of_arms/hu.svg"
+            },
+            "startOfWeek": "monday",
+            "capitalInfo": {
+                "latlng": [47.5, 19.08]
+            },
+            "postalCode": {
+                "format": "####",
+                "regex": "^(\\d{4})$"
+            }
+        }
+    ]
+}
