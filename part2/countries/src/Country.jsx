@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
 import WeatherWidget from './WeatherWidget'
 
 const Country = ({ details }) => {
