@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import connectService from './services/connect'
+import Notification from './components/Notification'
 import Filter from './components/Filter'
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
@@ -9,6 +10,8 @@ const App = () => {
     const [newName, setNewName] = useState('')
     const [newNumber, setNewNumber] = useState('')
     const [nameFilter, setNameFilter] = useState('')
+    const [notification, setNotification] = useState(null)
+    const [notificationType, setNotificationType] = useState()
 
     useEffect(() => {
         connectService.getAll().then((allPersons) => {
@@ -23,6 +26,15 @@ const App = () => {
     const handleNewName = (event) => setNewName(event.target.value)
 
     const handleNewNumber = (event) => setNewNumber(event.target.value)
+
+    const displayNotification = (message, type) => {
+        setNotification(message)
+        setNotificationType(type)
+        setTimeout(() => {
+            setNotification(null)
+            setNotificationType()
+        }, 2000)
+    }
 
     const addPerson = (event) => {
         event.preventDefault()
@@ -39,6 +51,7 @@ const App = () => {
                 setPersons(persons.concat(returnedPerson))
                 setNewName('')
                 setNewNumber('')
+                displayNotification(`Added ${returnedPerson.name}`, 'success')
             })
         } else {
             const confirmation = window.confirm(
@@ -57,6 +70,23 @@ const App = () => {
                                 : person
                         )
                     )
+                    displayNotification(
+                        `Updated ${returnedPerson.name}`,
+                        'success'
+                    )
+                })
+                .catch(() => {
+                    displayNotification(
+                        `${existingPerson.name} has been already removed from the server`,
+                        'error'
+                    )
+                    setPersons(
+                        persons.filter(
+                            (person) => person.id !== existingPerson.id
+                        )
+                    )
+                })
+                .finally(() => {
                     setNewName('')
                     setNewNumber('')
                 })
@@ -76,11 +106,17 @@ const App = () => {
         }
         connectService
             .remove(id)
-            .catch((error) => {
-                console.error(
-                    `The number of ${personToBeDeleted.name} has been already deleted from the server.`
+            .then(() => {
+                displayNotification(
+                    `${personToBeDeleted.name} has been removed`,
+                    'error'
                 )
-                console.error(error)
+            })
+            .catch(() => {
+                displayNotification(
+                    `${personToBeDeleted.name} has been already removed from the server`,
+                    'error'
+                )
             })
             .finally(() => {
                 setPersons(persons.filter((person) => person.id !== id))
@@ -99,6 +135,7 @@ const App = () => {
     return (
         <div>
             <h1>Phonebook</h1>
+            <Notification message={notification} className={notificationType} />
             <Filter name={nameFilter} filterByName={filterByName} />
 
             <h2>Add new</h2>
