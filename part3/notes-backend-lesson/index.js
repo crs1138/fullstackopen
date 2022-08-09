@@ -47,7 +47,16 @@ let notes = [
     },
 ]
 
+const requestLogger = (req, res, next) => {
+    console.log('Method: ', req.method)
+    console.log('Path: ', req.path)
+    console.log('Body: ', req.body)
+    console.log('---')
+    next()
+}
+
 app.use(express.json())
+app.use(requestLogger)
 
 app.get('/', (req, res) => {
     console.log({ headers: req.headers })
@@ -97,6 +106,13 @@ app.post('/api/notes', (req, res) => {
     notes = notes.concat(note)
     res.json(note)
 })
+
+const unknownEndpoint = (req, res, next) => {
+    res.status(404).send({ error: 'unknown endpoint' })
+    next()
+}
+
+app.use(unknownEndpoint)
 
 const PORT = 3001
 
