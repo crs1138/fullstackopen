@@ -95,9 +95,8 @@ const App = () => {
 
     const removePerson = (event) => {
         event.preventDefault()
-        const id = Number(event.target.id.replace('button-', ''))
+        const id = event.target.id.replace('button-', '')
         const personToBeDeleted = persons.find((person) => person.id === id)
-
         const confirmation = window.confirm(
             `Are you sure you want to delete the number of ${personToBeDeleted.name}?\nThis action cannot be undone.`
         )
