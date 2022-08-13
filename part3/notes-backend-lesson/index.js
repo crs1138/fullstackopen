@@ -52,32 +52,34 @@ app.delete('/api/notes/:id', (req, res) => {
         .catch((err) => next(err))
 })
 
-app.post('/api/notes', (req, res) => {
+app.post('/api/notes', (req, res, next) => {
     const body = req.body
-    if (!body.content) {
-        return res.status(400).json({ error: `Content missing` })
-    }
-
     const note = new Note({
         content: body.content,
         important: body.important || false,
         date: new Date(),
     })
 
-    note.save().then((savedNote) => {
-        res.json(savedNote)
-    })
+    note.save()
+        .then((savedNote) => {
+            res.json(savedNote)
+        })
+        .catch((err) => next(err))
 })
 
 app.put('/api/notes/:id', (req, res, next) => {
-    const body = req.body
+    const { content, important } = req.body
 
     const note = {
-        content: body.content,
-        important: body.important,
+        content,
+        important,
     }
 
-    Note.findByIdAndUpdate(req.params.id, note, { new: true })
+    Note.findByIdAndUpdate(req.params.id, note, {
+        new: true,
+        runValidators: true,
+        context: 'query',
+    })
         .then((updatedNote) => {
             res.json(updatedNote)
         })
@@ -96,6 +98,8 @@ const errorHandler = (error, req, res, next) => {
 
     if (error.name === 'CastError') {
         return res.status(400).send({ error: `malformatted id` })
+    } else if (error.name === 'ValidationError') {
+        return res.status(400).send({ error: error.message })
     }
     next(error)
 }
