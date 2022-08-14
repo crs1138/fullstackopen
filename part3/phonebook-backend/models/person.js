@@ -12,8 +12,33 @@ mongoose
     })
 
 const personSchema = mongoose.Schema({
-    name: String,
-    number: String,
+    name: {
+        type: String,
+        minLength: 3,
+        required: [true, `The name is required`],
+        unique: true,
+        // validate: {
+        //     validator: async (name) => {
+        //         const person = await Person.findOne({ name })
+        //         if (!!person) {
+        //             return false
+        //         }
+        //         return true
+        //     },
+        //     message: (props) =>
+        //         `The person ${props.name} already exists in the db`,
+        // },
+    },
+    number: {
+        type: String,
+        required: [true, `The phone number is required`],
+        validate: {
+            validator: (v) => {
+                return /^\d{2,3}-\d{6,}$/.test(v)
+            },
+            message: (props) => `${props.value} is not a valid phone number`,
+        },
+    },
 })
 
 personSchema.set('toJSON', {
