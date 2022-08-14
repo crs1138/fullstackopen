@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 if (process.argv.length < 3) {
     console.log(
-        `Please provide the password as an argument: node mongo.js <password>`
+        'Please provide the password as an argument: node mongo.js <password>'
     )
     process.exit(1)
 }
@@ -20,7 +20,7 @@ const Person = mongoose.model('Person', personSchema)
 if (!!name && !!number) {
     mongoose
         .connect(url)
-        .then((result) => {
+        .then(() => {
             const person = new Person({
                 name,
                 number,
@@ -34,7 +34,7 @@ if (!!name && !!number) {
 }
 
 if (!name && !number) {
-    mongoose.connect(url).then((result) => {
+    mongoose.connect(url).then(() => {
         Person.find({})
             .then((results) => {
                 console.log('phonebook:')

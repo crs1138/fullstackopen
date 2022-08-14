@@ -10,7 +10,7 @@ app.use(cors())
 app.use(express.static('build'))
 app.use(express.json())
 
-morgan.token('body', function (req, res) {
+morgan.token('body', function (req) {
     return req.method === 'POST' && JSON.stringify(req.body)
 })
 app.use(
@@ -20,7 +20,7 @@ app.use(
 )
 
 app.get('/', (req, res) => {
-    res.send(`<h1>Phonebook Server</h1>`)
+    res.send('<h1>Phonebook Server</h1>')
 })
 
 app.get('/api/persons', (req, res) => {
@@ -66,7 +66,7 @@ app.delete('/api/persons/:id', (req, res, next) => {
                 res.status(204).end()
             } else {
                 res.status(404).json({
-                    error: `Person already deleted from db`,
+                    error: 'Person already deleted from db',
                 })
             }
         })
@@ -123,7 +123,7 @@ app.put('/api/persons/:id', (req, res, next) => {
 })
 
 const unknownEndpoint = (req, res, next) => {
-    res.status(404).send({ error: `unknown endpoint` })
+    res.status(404).send({ error: 'unknown endpoint' })
     next()
 }
 app.use(unknownEndpoint)
@@ -132,7 +132,7 @@ const errorHandler = (error, req, res, next) => {
     console.error({ error })
 
     if ('CastError' === error.name) {
-        return res.status(400).send({ error: `malformatted id` })
+        return res.status(400).send({ error: 'malformatted id' })
     } else if ('ValidationError' === error.name) {
         return res.status(400).send({ error: error.message })
     }
