@@ -4,8 +4,8 @@ const url = process.env.MONGODB_URL
 
 mongoose
     .connect(url)
-    .then((result) => {
-        console.log(`Connected to MongoDB`)
+    .then(() => {
+        console.log('Connected to MongoDB')
     })
     .catch((error) => {
         console.error(`Error connecting to the DB: ${error.message}`)
@@ -15,23 +15,12 @@ const personSchema = mongoose.Schema({
     name: {
         type: String,
         minLength: 3,
-        required: [true, `The name is required`],
+        required: [true, 'The name is required'],
         unique: true,
-        // validate: {
-        //     validator: async (name) => {
-        //         const person = await Person.findOne({ name })
-        //         if (!!person) {
-        //             return false
-        //         }
-        //         return true
-        //     },
-        //     message: (props) =>
-        //         `The person ${props.name} already exists in the db`,
-        // },
     },
     number: {
         type: String,
-        required: [true, `The phone number is required`],
+        required: [true, 'The phone number is required'],
         validate: {
             validator: (v) => {
                 return /^\d{2,3}-\d{6,}$/.test(v)
