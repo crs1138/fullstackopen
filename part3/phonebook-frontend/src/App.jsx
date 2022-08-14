@@ -33,7 +33,7 @@ const App = () => {
         setTimeout(() => {
             setNotification(null)
             setNotificationType()
-        }, 2000)
+        }, 5000)
     }
 
     const addPerson = (event) => {
@@ -47,12 +47,26 @@ const App = () => {
         }
 
         if (isNewPerson) {
-            connectService.save(personObject).then((returnedPerson) => {
-                setPersons(persons.concat(returnedPerson))
-                setNewName('')
-                setNewNumber('')
-                displayNotification(`Added ${returnedPerson.name}`, 'success')
-            })
+            connectService
+                .save(personObject)
+                .then((returnedPerson) => {
+                    setPersons(persons.concat(returnedPerson))
+                    displayNotification(
+                        `Added ${returnedPerson.name}`,
+                        'success'
+                    )
+                })
+                .catch((err) => {
+                    displayNotification(err.response.data.error, 'error')
+                    const { personAlreadyInDb } = err.response.data
+                    if (!!personAlreadyInDb) {
+                        setPersons(persons.concat(personAlreadyInDb))
+                    }
+                })
+                .finally(() => {
+                    setNewName('')
+                    setNewNumber('')
+                })
         } else {
             const confirmation = window.confirm(
                 `${newName} already exists in your phonebook\nDo you want to replace their number with a new one?`
@@ -75,16 +89,15 @@ const App = () => {
                         'success'
                     )
                 })
-                .catch(() => {
-                    displayNotification(
-                        `${existingPerson.name} has been already removed from the server`,
-                        'error'
-                    )
-                    setPersons(
-                        persons.filter(
-                            (person) => person.id !== existingPerson.id
+                .catch((err) => {
+                    displayNotification(err.response.data.error, 'error')
+                    if (err.response.status === 404) {
+                        setPersons(
+                            persons.filter(
+                                (person) => person.id !== existingPerson.id
+                            )
                         )
-                    )
+                    }
                 })
                 .finally(() => {
                     setNewName('')
