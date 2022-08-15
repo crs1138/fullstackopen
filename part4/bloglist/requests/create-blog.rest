@@ -1,0 +1,9 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "Art Blog",
+    "author": "Emma Plunkett",
+    "url": "https://emmaplunkett.art",
+    "likes": "1000"
+}
