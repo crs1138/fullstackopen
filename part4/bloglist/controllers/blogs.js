@@ -10,6 +10,16 @@ blogsRouter.get('/', async (req, res, next) => {
     }
 })
 
+blogsRouter.get('/:id', async (req, res, next) => {
+    try {
+        const blog = await Blog.findById(req.params.id)
+
+        res.status(200).json(blog)
+    } catch (exception) {
+        next(exception)
+    }
+})
+
 blogsRouter.post('/', async (req, res, next) => {
     req.body.likes = req.body.likes || 0
 
@@ -22,6 +32,33 @@ blogsRouter.post('/', async (req, res, next) => {
         const blog = new Blog(req.body)
         const result = await blog.save()
         res.status(201).json(result)
+    } catch (exception) {
+        next(exception)
+    }
+})
+
+blogsRouter.delete('/:id', async (req, res, next) => {
+    const hasBlogWithId = await Blog.findById(req.params.id)
+    if (!hasBlogWithId) {
+        return res.status(404).json({ error: 'Blog not found.' })
+    }
+    try {
+        Blog.remove({ id: req.params.id })
+        res.status(204).end()
+    } catch (exception) {
+        next(exception)
+    }
+})
+
+blogsRouter.put('/:id', async (req, res, next) => {
+    try {
+        const { title, author, url, likes } = req.body
+        const result = await Blog.findByIdAndUpdate(
+            req.params.id,
+            { title, author, url, likes },
+            { new: true, runValidators: true, context: 'query' }
+        )
+        res.json(result)
     } catch (exception) {
         next(exception)
     }
