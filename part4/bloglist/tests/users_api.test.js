@@ -125,6 +125,18 @@ describe('creating user', () => {
     })
 })
 
+describe('viewing user(s)', () => {
+    test('view all users', async () => {
+        const result = await api
+            .get('/api/users')
+            .expect(200)
+            .expect('Content-Type', /application\/json/)
+
+        const usersAtEnd = await helper.getUsersInDb()
+        expect(result.body).toEqual(usersAtEnd)
+    })
+})
+
 afterAll(() => {
     mongoose.connection.close()
 })

@@ -1,9 +1,15 @@
 const blogsRouter = require('express').Router()
 const Blog = require('../models/blog')
+const User = require('../models/user')
 
 blogsRouter.get('/', async (req, res, next) => {
     try {
-        const blogs = await Blog.find({})
+        // populate('name-of-the-field-with-reference-as-defined-in-blogSchema')
+        const blogs = await Blog.find({}).populate('user', {
+            username: 1,
+            name: 1,
+            id: 1,
+        })
         res.json(blogs)
     } catch (exception) {
         next(exception)
@@ -22,16 +28,31 @@ blogsRouter.get('/:id', async (req, res, next) => {
 
 blogsRouter.post('/', async (req, res, next) => {
     req.body.likes = req.body.likes || 0
+    const { author, title, likes, url } = req.body
 
-    if (!req.body.author || !req.body.url) {
+    if (!author || !url) {
         res.status(400).json({
             error: 'Missing author and/or url for the blog record',
         })
     }
     try {
-        const blog = new Blog(req.body)
-        const result = await blog.save()
-        res.status(201).json(result)
+        const user = await User.findOne()
+
+        const newBlog = {
+            author,
+            title,
+            likes,
+            url,
+            user: user._id,
+        }
+        const blog = new Blog(newBlog)
+        const savedBlog = await blog.save()
+
+        // save the reference of the blog Id to the user too
+        user.blogs = user.blogs.concat(savedBlog._id)
+        await user.save()
+
+        res.status(201).json(savedBlog)
     } catch (exception) {
         next(exception)
     }
