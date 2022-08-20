@@ -1,6 +1,9 @@
 const bcrypt = require('bcrypt')
 const Blog = require('../models/blog')
 const User = require('../models/user')
+const supertest = require('supertest')
+const app = require('../app')
+const api = supertest(app)
 
 const initialBlogs = [
     {
@@ -47,9 +50,18 @@ const generateDefaultUser = async () => {
     return user
 }
 
+const getAuthToken = async () => {
+    const userLoggedIn = await api
+        .post('/api/login')
+        .send({ username: 'root', password: 'Sekret' })
+        .expect(200)
+    return userLoggedIn.body.token
+}
+
 module.exports = {
     initialBlogs,
     getValidNonExistingId,
     getUsersInDb,
     generateDefaultUser,
+    getAuthToken,
 }

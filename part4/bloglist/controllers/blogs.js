@@ -1,6 +1,7 @@
 const blogsRouter = require('express').Router()
 const Blog = require('../models/blog')
 const User = require('../models/user')
+const jwt = require('jsonwebtoken')
 
 blogsRouter.get('/', async (req, res, next) => {
     try {
@@ -27,15 +28,21 @@ blogsRouter.get('/:id', async (req, res, next) => {
 })
 
 blogsRouter.post('/', async (req, res, next) => {
-    req.body.likes = req.body.likes || 0
-    const { author, title, likes, url } = req.body
-
-    if (!author || !url) {
-        res.status(400).json({
-            error: 'Missing author and/or url for the blog record',
-        })
-    }
     try {
+        req.body.likes = req.body.likes || 0
+        const { token } = req
+        const { author, title, likes, url } = req.body
+        const decodedToken = jwt.verify(token, process.env.SECRET)
+
+        if (!decodedToken.id) {
+            return res.status(401).json({ error: 'missing or invalid token' })
+        }
+
+        if (!author || !url) {
+            return res.status(400).json({
+                error: 'Missing author and/or url for the blog record',
+            })
+        }
         const user = await User.findOne()
 
         const newBlog = {

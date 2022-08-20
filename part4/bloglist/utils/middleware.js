@@ -16,10 +16,26 @@ const unknownEndpoint = (req, res, next) => {
 const errorHandler = (error, req, res, next) => {
     if ('CastError' === error.name) {
         res.status(400).send({ error: 'Malformated id' })
+    } else if ('JsonWebTokenError' === error.name) {
+        res.status(401).json({ error: 'missing or invalid token' })
     }
 
     logger.error(error.message)
     next(error)
 }
 
-module.exports = { requestLogger, unknownEndpoint, errorHandler }
+const tokenExtractor = (req, res, next) => {
+    const authorization = req.get('authorization')
+    req.token =
+        authorization && authorization.toLowerCase().startsWith('bearer ')
+            ? authorization.substring(7)
+            : null
+    next()
+}
+
+module.exports = {
+    requestLogger,
+    unknownEndpoint,
+    errorHandler,
+    tokenExtractor,
+}

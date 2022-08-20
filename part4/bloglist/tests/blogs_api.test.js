@@ -49,6 +49,8 @@ describe('viewing of existing blogs', () => {
 
 describe('creating an individual blog items', () => {
     test('create a new blog', async () => {
+        const token = await helper.getAuthToken()
+
         const newBlog = {
             author: 'Emma Plunkett',
             title: 'Art of life',
@@ -56,7 +58,11 @@ describe('creating an individual blog items', () => {
             likes: 200,
         }
 
-        const response = await api.post('/api/blogs').send(newBlog).expect(201)
+        const response = await api
+            .post('/api/blogs')
+            .set('Authorization', `Bearer ${token}`)
+            .send(newBlog)
+            .expect(201)
         const blogsAfter = await api.get('/api/blogs')
 
         expect(response.body.title).toContain('Art of life')
@@ -65,28 +71,56 @@ describe('creating an individual blog items', () => {
     })
 
     test('when creating a blog item with likes omitted make sure the default value is 0', async () => {
+        const token = await helper.getAuthToken()
         const newBlog = {
             author: 'Emma Plunkett',
             title: 'Art of life',
             url: 'https://emmaplunkett.art',
         }
 
-        const response = await api.post('/api/blogs').send(newBlog).expect(201)
+        const response = await api
+            .post('/api/blogs')
+            .set('Authorization', `Bearer ${token}`)
+            .send(newBlog)
+            .expect(201)
         expect(response.body.likes).toBe(0)
     })
 
     test('response is 400 for POST request if title or url missing when creating a blog item', async () => {
+        const token = await helper.getAuthToken()
+
         const newBlog = {
             author: 'Emma Plunkett',
             likes: 300,
         }
 
-        await api.post('/api/blogs').send(newBlog).expect(400)
+        await api
+            .post('/api/blogs')
+            .set('Authorization', `Bearer ${token}`)
+            .send(newBlog)
+            .expect(400)
+    })
+
+    test('fail to create a new blog item - missing or invalid token', async () => {
+        const newBlog = {
+            author: 'Emma Plunkett',
+            title: 'Art of life',
+            url: 'https://emmaplunkett.art',
+            likes: 200,
+        }
+
+        const response = await api.post('/api/blogs').send(newBlog).expect(401)
+        const blogsAfter = await api.get('/api/blogs')
+
+        expect(response.body.error).toContain('missing or invalid token')
+        expect(blogsAfter.body.length).toBe(helper.initialBlogs.length)
     })
 })
 
 describe('deleting an individual blog item', () => {
     test('succeeds deleting a blog item when valid id is provided', async () => {
+        const token = await helper.getAuthToken()
+
         const dummyBlogItem = {
             author: 'Emma Plunkett',
             title: 'I will delete this blog soon',
@@ -94,7 +128,10 @@ describe('deleting an individual blog item', () => {
             url: 'https://emmaplunkett.art',
         }
 
-        const response = await api.post('/api/blogs').send(dummyBlogItem)
+        const response = await api
+            .post('/api/blogs')
+            .set('Authorization', `Bearer ${token}`)
+            .send(dummyBlogItem)
         const { id: idToDelete } = response.body
 
         await api.delete(`/api/blogs/${idToDelete}`).expect(204)
