@@ -39,21 +39,41 @@ const getUsersInDb = async () => {
     return users.map((user) => user.toJSON())
 }
 
-const generateDefaultUser = async () => {
-    const passwordHash = await bcrypt.hash('Sekret', 10)
+// const generateDefaultUser = async () => {
+//     const passwordHash = await bcrypt.hash('Sekret', 10)
+//     const user = new User({
+//         username: 'root',
+//         name: 'Super User',
+//         passwordHash,
+//     })
+//     await user.save()
+//     return user
+// }
+
+const generateUser = async ({ username, name, password }) => {
+    const passwordHash = await bcrypt.hash(password, 10)
     const user = new User({
-        username: 'root',
-        name: 'Super User',
+        username,
+        name,
         passwordHash,
     })
     await user.save()
     return user
 }
 
-const getAuthToken = async () => {
+const generateDefaultUser = () =>
+    generateUser({
+        username: 'root',
+        name: 'Super User',
+        password: 'Sekret',
+    })
+
+const getAuthToken = async (
+    userCredentials = { username: 'root', password: 'Sekret' }
+) => {
     const userLoggedIn = await api
         .post('/api/login')
-        .send({ username: 'root', password: 'Sekret' })
+        .send(userCredentials)
         .expect(200)
     return userLoggedIn.body.token
 }
@@ -62,6 +82,7 @@ module.exports = {
     initialBlogs,
     getValidNonExistingId,
     getUsersInDb,
+    generateUser,
     generateDefaultUser,
     getAuthToken,
 }

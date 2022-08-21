@@ -43,7 +43,7 @@ blogsRouter.post('/', async (req, res, next) => {
                 error: 'Missing author and/or url for the blog record',
             })
         }
-        const user = await User.findOne()
+        const user = await User.findById(decodedToken.id)
 
         const newBlog = {
             author,
@@ -66,11 +66,21 @@ blogsRouter.post('/', async (req, res, next) => {
 })
 
 blogsRouter.delete('/:id', async (req, res, next) => {
-    const hasBlogWithId = await Blog.findById(req.params.id)
-    if (!hasBlogWithId) {
-        return res.status(404).json({ error: 'Blog not found.' })
-    }
     try {
+        const { token } = req
+        const decodedToken = jwt.verify(token, process.env.SECRET)
+
+        const hasBlogWithId = await Blog.findById(req.params.id)
+        if (!hasBlogWithId) {
+            return res.status(404).json({ error: 'Blog not found.' })
+        }
+
+        const userId = hasBlogWithId.user.toString()
+
+        if (userId !== decodedToken.id) {
+            return res.status(401).json({ error: 'missing or invalid token' })
+        }
+
         Blog.remove({ id: req.params.id })
         res.status(204).end()
     } catch (exception) {

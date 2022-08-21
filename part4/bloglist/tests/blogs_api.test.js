@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const supertest = require('supertest')
 const app = require('../app')
 const Blog = require('../models/blog')
+const User = require('../models/user')
 const helper = require('./test_helper')
 
 const api = supertest(app)
@@ -9,6 +10,8 @@ const api = supertest(app)
 beforeEach(async () => {
     await Blog.deleteMany({})
     await Blog.insertMany(helper.initialBlogs)
+    await User.deleteMany({})
+    await helper.generateDefaultUser()
 })
 
 describe('viewing of existing blogs', () => {
@@ -120,6 +123,8 @@ describe('creating an individual blog items', () => {
 describe('deleting an individual blog item', () => {
     test('succeeds deleting a blog item when valid id is provided', async () => {
         const token = await helper.getAuthToken()
+        const jwt = require('jsonwebtoken')
+        const decodedToken = jwt.verify(token, process.env.SECRET)
 
         const dummyBlogItem = {
             author: 'Emma Plunkett',
@@ -128,18 +133,80 @@ describe('deleting an individual blog item', () => {
             url: 'https://emmaplunkett.art',
         }
 
-        const response = await api
+        const blog = await api
             .post('/api/blogs')
             .set('Authorization', `Bearer ${token}`)
             .send(dummyBlogItem)
-        const { id: idToDelete } = response.body
+        const { id: idToDelete } = blog.body
 
-        await api.delete(`/api/blogs/${idToDelete}`).expect(204)
+        await api
+            .delete(`/api/blogs/${idToDelete}`)
+            .set('Authorization', `Bearer ${token}`)
+            .expect(204)
     })
 
-    test('fail deleting a blog item with valid non-existing id', async () => {
+    test('fails deleting a blog item created by different user', async () => {
+        const rootToken = await helper.getAuthToken()
+
+        const dummyUser = await helper.generateUser({
+            username: 'dummy',
+            name: 'Lojza Vocasek',
+            password: '1234',
+        })
+
+        const dummyToken = await helper.getAuthToken({
+            username: 'dummy',
+            password: '1234',
+        })
+
+        const dummyBlogItem = {
+            author: 'Emma Plunkett',
+            title: 'I will try to delete this blog soon',
+            likes: 1,
+            url: 'https://emmaplunkett.art',
+        }
+
+        const blogByRoot = await api
+            .post('/api/blogs')
+            .set('Authorization', `Bearer ${rootToken}`)
+            .send(dummyBlogItem)
+        const { id: idToDelete } = blogByRoot.body
+
+        const { body: blogsBeforeDeleteAttempt } = await api.get('/api/blogs')
+
+        await api
+            .delete(`/api/blogs/${idToDelete}`)
+            .set('Authorization', `Bearer ${dummyToken}`)
+            .expect(401)
+            .expect('Content-Type', /application\/json/)
+            .expect({ error: 'missing or invalid token' })
+
+        const { body: blogsAfterDeleteAtempt } = await api.get('/api/blogs')
+        expect(blogsAfterDeleteAtempt.length).toBe(
+            blogsBeforeDeleteAttempt.length
+        )
+    })
+
+    test('fails deleting a blog item with valid non-existing id', async () => {
+        const token = await helper.getAuthToken()
         const validNonexistingId = await helper.getValidNonExistingId()
-        await api.delete(`/api/blogs/${validNonexistingId}`).expect(404)
+        await api
+            .delete(`/api/blogs/${validNonexistingId}`)
+            .set('Authorization', `Bearer ${token}`)
+            .expect(404)
+    })
+
+    test('fails deleting a blog item with missing or invalid token', async () => {
+        const { body: blogsAtStart } = await api.get('/api/blogs')
+        const [firstBlog] = blogsAtStart
+
+        await api
+            .delete(`/api/blogs/${firstBlog.id}`)
+            .expect(401)
+            .expect({ error: 'missing or invalid token' })
+
+        const { body: blogsAtEnd } = await api.get('/api/blogs')
+        expect(blogsAtEnd.length).toBe(blogsAtStart.length)
     })
 })
 
