@@ -1,7 +1,7 @@
 const blogsRouter = require('express').Router()
 const Blog = require('../models/blog')
 const User = require('../models/user')
-const jwt = require('jsonwebtoken')
+const middleware = require('../utils/middleware')
 
 blogsRouter.get('/', async (req, res, next) => {
     try {
@@ -27,23 +27,22 @@ blogsRouter.get('/:id', async (req, res, next) => {
     }
 })
 
-blogsRouter.post('/', async (req, res, next) => {
+blogsRouter.post('/', middleware.userExtractor, async (req, res, next) => {
     try {
-        req.body.likes = req.body.likes || 0
-        const { token } = req
-        const { author, title, likes, url } = req.body
-        const decodedToken = jwt.verify(token, process.env.SECRET)
-
-        if (!decodedToken.id) {
+        if (!req?.user) {
             return res.status(401).json({ error: 'missing or invalid token' })
         }
+
+        req.body.likes = req.body.likes || 0
+        const { author, title, likes, url } = req.body
 
         if (!author || !url) {
             return res.status(400).json({
                 error: 'Missing author and/or url for the blog record',
             })
         }
-        const user = await User.findById(decodedToken.id)
+
+        const user = await User.findById(req.user)
 
         const newBlog = {
             author,
@@ -65,19 +64,16 @@ blogsRouter.post('/', async (req, res, next) => {
     }
 })
 
-blogsRouter.delete('/:id', async (req, res, next) => {
+blogsRouter.delete('/:id', middleware.userExtractor, async (req, res, next) => {
     try {
-        const { token } = req
-        const decodedToken = jwt.verify(token, process.env.SECRET)
-
         const hasBlogWithId = await Blog.findById(req.params.id)
         if (!hasBlogWithId) {
             return res.status(404).json({ error: 'Blog not found.' })
         }
 
-        const userId = hasBlogWithId.user.toString()
+        const userId = hasBlogWithId?.user.toString()
 
-        if (userId !== decodedToken.id) {
+        if (userId !== req?.user) {
             return res.status(401).json({ error: 'missing or invalid token' })
         }
 

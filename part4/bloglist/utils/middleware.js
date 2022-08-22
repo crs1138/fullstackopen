@@ -24,18 +24,35 @@ const errorHandler = (error, req, res, next) => {
     next(error)
 }
 
-const tokenExtractor = (req, res, next) => {
-    const authorization = req.get('authorization')
-    req.token =
-        authorization && authorization.toLowerCase().startsWith('bearer ')
-            ? authorization.substring(7)
-            : null
-    next()
+const userExtractor = (req, res, next) => {
+    function invalidTokenResponse() {
+        return res.status(401).json({ error: 'missing or invalid token' })
+    }
+    try {
+        const jwt = require('jsonwebtoken')
+        const authorization = req.get('authorization')
+        const token =
+            authorization && authorization.toLowerCase().startsWith('bearer ')
+                ? authorization.substring(7)
+                : null
+
+        if (!token) {
+            invalidTokenResponse()
+        }
+        const decodedToken = jwt.verify(token, process.env.SECRET)
+        if (!decodedToken?.id) {
+            invalidTokenResponse()
+        }
+        req.user = decodedToken.id
+        next()
+    } catch (exception) {
+        next(exception)
+    }
 }
 
 module.exports = {
     requestLogger,
     unknownEndpoint,
     errorHandler,
-    tokenExtractor,
+    userExtractor,
 }

@@ -39,17 +39,6 @@ const getUsersInDb = async () => {
     return users.map((user) => user.toJSON())
 }
 
-// const generateDefaultUser = async () => {
-//     const passwordHash = await bcrypt.hash('Sekret', 10)
-//     const user = new User({
-//         username: 'root',
-//         name: 'Super User',
-//         passwordHash,
-//     })
-//     await user.save()
-//     return user
-// }
-
 const generateUser = async ({ username, name, password }) => {
     const passwordHash = await bcrypt.hash(password, 10)
     const user = new User({
