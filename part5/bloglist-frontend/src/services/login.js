@@ -5,4 +5,5 @@ const login = async ({ username, password }) => {
     return result.data
 }
 
-export default { login }
+const loginServices = { login }
+export default loginServices

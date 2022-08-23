@@ -1,0 +1,27 @@
+:root {
+    --color-success: #00660c;
+    --color-error: #a00010;
+    --color-neutral-light: #fcfcf3;
+    --color-neutral-dark: #0f0f0f;
+    --b-radius: 3px;
+}
+.notification {
+    border-radius: var(--b-radius);
+    border-color: var(--color-neutral-dark);
+    border-width: 1px;
+    border-style: solid;
+    background-color: var(--color-neutral-light);
+    color: var(--color-neutral-dark);
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.notification--success {
+    border-color: var(--color-success);
+    color: var(--color-success);
+}
+
+.notification--error {
+    border-color: var(--color-error);
+    color: var(--color-error);
+}
