@@ -1,19 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Blog from './components/Blog'
 import LoginForm from './components/LoginForm'
 import BlogForm from './components/BlogForm'
 import Notification from './components/Notification'
+import Toggable from './components/Toggable'
 import blogService from './services/blogs'
 import loginService from './services/login'
 
 const App = () => {
     const [blogs, setBlogs] = useState([])
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
     const [user, setUser] = useState(null)
-    const [title, setTitle] = useState('')
-    const [author, setAuthor] = useState('')
-    const [url, setUrl] = useState('')
     const [notification, setNotification] = useState(null)
 
     const showNotification = ({ message, type }) => {
@@ -36,9 +32,8 @@ const App = () => {
     }, [])
 
     // Login/logout handlers
-    const handleLogin = async (eve) => {
+    const handleLogin = async ({ username, password }) => {
         try {
-            eve.preventDefault()
             const user = await loginService.login({ username, password })
 
             showNotification({
@@ -48,8 +43,6 @@ const App = () => {
             window.localStorage.setItem('bloglistAppUser', JSON.stringify(user))
             blogService.setToken(user.token)
             setUser(user)
-            setUsername('')
-            setPassword('')
         } catch (exception) {
             showNotification({
                 message: `wrong username or password`,
@@ -64,8 +57,7 @@ const App = () => {
     }
 
     // BlogForm handlers
-    const addBlog = async (eve) => {
-        eve.preventDefault()
+    const addBlog = async ({ title, author, url }) => {
         try {
             const blog = await blogService.create({ title, author, url })
 
@@ -75,9 +67,8 @@ const App = () => {
             })
 
             setBlogs(blogs.concat(blog))
-            setTitle('')
-            setAuthor('')
-            setUrl('')
+
+            blogFormRef.current.toggleVisibility()
         } catch (exception) {
             setNotification(exception.response.data.error, 'error')
             setTimeout(() => {
@@ -86,15 +77,13 @@ const App = () => {
         }
     }
 
-    const handleTitleChange = ({ target }) => {
-        setTitle(target.value)
-    }
-    const handleAuthorChange = ({ target }) => {
-        setAuthor(target.value)
-    }
-    const handleUrlChange = ({ target }) => {
-        setUrl(target.value)
-    }
+    const blogFormRef = useRef()
+
+    const blogForm = () => (
+        <Toggable buttonLabel="Add blog" ref={blogFormRef}>
+            <BlogForm handleSubmit={addBlog} />
+        </Toggable>
+    )
 
     return (
         <div>
@@ -107,17 +96,7 @@ const App = () => {
                             type={notification.type}
                         />
                     )}
-                    <LoginForm
-                        onSubmit={handleLogin}
-                        username={username}
-                        password={password}
-                        onUsernameChange={({ target }) =>
-                            setUsername(target.value)
-                        }
-                        onPasswordChange={({ target }) =>
-                            setPassword(target.value)
-                        }
-                    />
+                    <LoginForm handleLogin={handleLogin} />
                 </>
             ) : (
                 <>
@@ -134,15 +113,8 @@ const App = () => {
                             logout
                         </button>
                     </p>
-                    <BlogForm
-                        title={title}
-                        author={author}
-                        url={url}
-                        onTitleChange={handleTitleChange}
-                        onAuthorChange={handleAuthorChange}
-                        onUrlChange={handleUrlChange}
-                        onSubmit={addBlog}
-                    />
+                    {blogForm()}
+
                     {blogs.map((blog) => (
                         <Blog key={blog.id} blog={blog} />
                     ))}
