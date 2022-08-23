@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import Toggable from './components/Toggable'
 import NoteForm from './components/NoteForm'
 import LoginForm from './components/LoginForm'
 import Note from './components/Note'
@@ -10,11 +11,9 @@ import './index.css'
 
 const App = () => {
     const [notes, setNotes] = useState([])
-    const [newNote, setNewNote] = useState(`a new note…`)
+
     const [showAllNotes, setShowAllNotes] = useState(true)
     const [errorMessage, setErrorMessage] = useState(null)
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
     const [user, setUser] = useState(null)
 
     useEffect(() => {
@@ -32,19 +31,15 @@ const App = () => {
         }
     }, [])
 
-    const handleLogin = async (event) => {
-        event.preventDefault()
+    const handleLogin = async ({ username, password }) => {
         try {
             const user = await loginService.login({ username, password })
-            console.log('user :', user)
             window.localStorage.setItem(
                 'loggedNoteAppUser',
                 JSON.stringify(user)
             )
             noteService.setToken(user.token)
             setUser(user)
-            setUsername('')
-            setPassword('')
         } catch (exception) {
             setErrorMessage('Wrong credentials')
             setTimeout(() => {
@@ -53,27 +48,20 @@ const App = () => {
         }
     }
 
+    const logout = () => {
+        window.localStorage.removeItem('loggedNoteAppUser')
+        setUser(null)
+    }
+
     const notesToShow = showAllNotes
         ? notes
         : notes.filter((note) => note.important)
 
-    const addNote = (event) => {
-        event.preventDefault()
-        const noteObject = {
-            content: newNote,
-            date: new Date().toISOString(),
-            important: Math.random() < 0.5,
-            // id: notes.length + 1, // `id` added automatically by JSON server
-        }
-        // axios
-        //     .post('http://localhost:3001/notes', noteObject)
-        //     .then((response) => {
-        //         setNotes(notes.concat(response.data))
-        //         setNewNote('')
-        //     })
+    const addNote = (noteObject) => {
+        console.log('noteFormRef :', noteFormRef)
+        noteFormRef.current.toggleVisibility()
         noteService.create(noteObject).then((returnedNote) => {
             setNotes(notes.concat(returnedNote))
-            setNewNote('')
         })
     }
 
@@ -98,27 +86,33 @@ const App = () => {
             })
     }
 
+    const noteFormRef = useRef()
+    const noteForm = () => (
+        <Toggable buttonLabel="New note" ref={noteFormRef}>
+            <NoteForm createNote={addNote} />
+        </Toggable>
+    )
+
     return (
         <div>
             <h1>Notes</h1>
             <Notification message={errorMessage} />
             {user === null ? (
-                <LoginForm
-                    onLogin={handleLogin}
-                    username={username}
-                    password={password}
-                    onUsernameChange={({ target }) => setUsername(target.value)}
-                    onPasswordChange={({ target }) => setPassword(target.value)}
-                />
+                <Toggable buttonLabel="Login">
+                    <LoginForm handleLogin={handleLogin} />
+                </Toggable>
             ) : (
                 <div>
-                    <p>{user.name} logged-in</p>
-                    <NoteForm
-                        addNote={addNote}
-                        onNoteChange={({ target }) => setNewNote(target.value)}
-                        onFocus={({ target }) => setNewNote('')}
-                        note={newNote}
-                    />
+                    <p>
+                        {user.name} logged-in{' '}
+                        <button type="button" onClick={logout}>
+                            Logout
+                        </button>
+                    </p>
+                    {noteForm()}
+                    {/* <Toggable buttonLabel="New note">
+                        <NoteForm createNote={addNote} />
+                    </Toggable> */}
                 </div>
             )}
             <div>
