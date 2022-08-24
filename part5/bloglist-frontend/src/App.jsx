@@ -45,7 +45,7 @@ const App = () => {
             setUser(user)
         } catch (exception) {
             showNotification({
-                message: `wrong username or password`,
+                message: 'wrong username or password',
                 type: 'error',
             })
         }
