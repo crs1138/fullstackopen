@@ -85,6 +85,23 @@ const App = () => {
         </Toggable>
     )
 
+    const handleLike = async (newBlogItem) => {
+        const newUserData = {
+            ...newBlogItem,
+            user: newBlogItem.user.id,
+        }
+        const newBlogDetails = await blogService.update(
+            newBlogItem.id,
+            newUserData
+        )
+        const updatedBlogs = blogs.map((blog) => {
+            return blog.id === newBlogDetails.id
+                ? { ...newBlogDetails, user: blog.user }
+                : blog
+        })
+        setBlogs(updatedBlogs)
+    }
+
     return (
         <div>
             {user === null ? (
@@ -116,7 +133,11 @@ const App = () => {
                     {blogForm()}
 
                     {blogs.map((blog) => (
-                        <Blog key={blog.id} blog={blog} />
+                        <Blog
+                            key={blog.id}
+                            blog={blog}
+                            handleLike={handleLike}
+                        />
                     ))}
                 </>
             )}
