@@ -77,7 +77,7 @@ blogsRouter.delete('/:id', middleware.userExtractor, async (req, res, next) => {
             return res.status(401).json({ error: 'missing or invalid token' })
         }
 
-        Blog.remove({ id: req.params.id })
+        await Blog.findByIdAndRemove(req.params.id)
         res.status(204).end()
     } catch (exception) {
         next(exception)

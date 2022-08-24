@@ -139,10 +139,16 @@ describe('deleting an individual blog item', () => {
             .send(dummyBlogItem)
         const { id: idToDelete } = blog.body
 
+        const { body: blogsBeforeDelete } = await api.get('/api/blogs')
+
         await api
             .delete(`/api/blogs/${idToDelete}`)
             .set('Authorization', `Bearer ${token}`)
             .expect(204)
+
+        const { body: blogsAfterDelete } = await api.get('/api/blogs')
+        expect(blogsAfterDelete.length).toBe(blogsBeforeDelete.length - 1)
+        expect(blogsAfterDelete).not.toContain(dummyBlogItem)
     })
 
     test('fails deleting a blog item created by different user', async () => {
