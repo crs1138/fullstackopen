@@ -3,8 +3,8 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjYyZmZjOGVkNTEyYTVkYjgwMWJkNDhmNCIsImlhdCI6MTY2MTE1NDMyM30.hjG9cXChg7lcmPtr2gClNF6QnS8veqsHACiAQU7XqMo
 
 {
-    "title": "Art Blog",
+    "title": "Painting saved my life",
     "author": "Emma Plunkett",
     "url": "https://emmaplunkett.art",
-    "likes": "1000"
+    "likes": 0
 }

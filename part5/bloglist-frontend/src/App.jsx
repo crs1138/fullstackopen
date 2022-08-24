@@ -102,6 +102,22 @@ const App = () => {
         setBlogs(updatedBlogs)
     }
 
+    const handleRemove = async ({ id, title, author }) => {
+        try {
+            if (!window.confirm(`Remove blog "${title}" by "${author}"?`)) {
+                return
+            }
+            await blogService.remove(id)
+            const updatedBlogs = blogs.filter((blog) => blog.id !== id)
+            setBlogs(updatedBlogs)
+        } catch (exception) {
+            setNotification(exception.response.data.error, 'error')
+            setTimeout(() => {
+                setNotification(null)
+            }, 5000)
+        }
+    }
+
     return (
         <div>
             {user === null ? (
@@ -139,6 +155,8 @@ const App = () => {
                                 key={blog.id}
                                 blog={blog}
                                 handleLike={handleLike}
+                                handleRemove={handleRemove}
+                                loggedInUser={user.username}
                             />
                         ))}
                 </>

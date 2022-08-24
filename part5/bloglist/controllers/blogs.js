@@ -52,6 +52,11 @@ blogsRouter.post('/', middleware.userExtractor, async (req, res, next) => {
             user: user._id,
         }
         const blog = new Blog(newBlog)
+        blog.populate('user', {
+            username: 1,
+            name: 1,
+            id: 1,
+        })
         const savedBlog = await blog.save()
 
         // save the reference of the blog Id to the user too
