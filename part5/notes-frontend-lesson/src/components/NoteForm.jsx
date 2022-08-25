@@ -18,8 +18,11 @@ const NoteForm = ({ createNote }) => {
                 onChange={({ target }) => setNewNote(target.value)}
                 value={newNote}
                 onFocus={() => setNewNote('')}
+                data-cy="new-note-input"
             />
-            <button type="submit">save</button>
+            <button type="submit" data-cy="submit">
+                save
+            </button>
         </form>
     )
 }

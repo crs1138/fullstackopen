@@ -58,7 +58,6 @@ const App = () => {
         : notes.filter((note) => note.important)
 
     const addNote = (noteObject) => {
-        console.log('noteFormRef :', noteFormRef)
         noteFormRef.current.toggleVisibility()
         noteService.create(noteObject).then((returnedNote) => {
             setNotes(notes.concat(returnedNote))
