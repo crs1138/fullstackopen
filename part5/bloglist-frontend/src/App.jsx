@@ -95,10 +95,13 @@ const App = () => {
             newUserData
         )
         const updatedBlogs = blogs.map((blog) => {
+            console.log('newBlogItem :', newBlogItem)
+            console.log('blog :', blog)
             return blog.id === newBlogDetails.id
                 ? { ...newBlogDetails, user: blog.user }
                 : blog
         })
+        console.log('updatedBlogs :', updatedBlogs)
         setBlogs(updatedBlogs)
     }
 

@@ -25,7 +25,7 @@ const Blog = ({ blog, handleLike, handleRemove, loggedInUser }) => {
     }
 
     return (
-        <div style={blogStyle}>
+        <div className="blog" data-cy="blog" style={blogStyle}>
             {title} - {author}{' '}
             <button type="button" onClick={toggleDetails}>
                 {showDetails ? 'hide' : 'view'}
@@ -34,8 +34,12 @@ const Blog = ({ blog, handleLike, handleRemove, loggedInUser }) => {
                 <>
                     <div>{url}</div>
                     <div>
-                        Likes {likes}{' '}
-                        <button type="button" onClick={onLikeClick}>
+                        Likes <span data-cy="likes-count">{likes}</span>{' '}
+                        <button
+                            type="button"
+                            data-cy="like-button"
+                            onClick={onLikeClick}
+                        >
                             Like
                         </button>
                     </div>
