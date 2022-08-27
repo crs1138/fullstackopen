@@ -26,17 +26,38 @@ export const incrementVote = (id) => {
     }
 }
 
+const generateId = () => Number((Math.random() * 100000000).toFixed(0))
+export const createAnecdote = (content) => {
+    return {
+        type: 'CREATE_ANECDOTE',
+        data: {
+            id: generateId(),
+            content,
+            votes: 0,
+        },
+    }
+}
+
 const reducer = (state = initialState, action) => {
     console.log('state now: ', state)
     console.log('action', action)
     switch (action.type) {
         case 'VOTE':
-            const { id } = action.data
             return state.map((anecdote) => {
-                return anecdote.id === id
+                return anecdote.id === action.data.id
                     ? { ...anecdote, votes: anecdote.votes + 1 }
                     : anecdote
             })
+
+        case 'CREATE_ANECDOTE':
+            const { content, votes } = action.data
+            const newAnecdote = {
+                content,
+                id: action.data.id,
+                votes: votes || 0,
+            }
+            return [...state, newAnecdote]
+
         default:
             return state
     }
