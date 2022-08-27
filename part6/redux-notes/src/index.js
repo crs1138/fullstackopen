@@ -1,15 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createStore } from 'redux'
-
-const noteReducer = (state = [], action) => {
-    switch (action.type) {
-        case 'NEW_NOTE':
-            return state.concat(action.data)
-        default:
-            return state
-    }
-}
+import noteReducer from './reducers/noteReducer'
 
 const store = createStore(noteReducer)
 
@@ -31,18 +23,45 @@ store.dispatch({
     },
 })
 
-const App = () => (
-    <div>
-        <ul>
-            {store.getState().map((note) => (
-                <li key={note.id}>
-                    {note.content}{' '}
-                    <strong>{note.important ? 'important' : ''}</strong>
-                </li>
-            ))}
-        </ul>
-    </div>
-)
+const generateId = () => Number((Math.random() * 100000000).toFixed(0))
+const App = () => {
+    const addNote = (eve) => {
+        eve.preventDefault()
+        const content = eve.target.note.value
+        eve.target.note.value = ''
+        store.dispatch({
+            type: 'NEW_NOTE',
+            data: { content, important: false, id: generateId() },
+        })
+    }
+
+    const toggleImportance = (id) => {
+        console.log({ id })
+        store.dispatch({ type: 'TOGGLE_IMPORTANCE', data: { id } })
+    }
+    return (
+        <div>
+            <form onSubmit={addNote}>
+                <label htmlFor="newNote">New note:</label>
+                <input id="newNote" type="text" name="note" />
+                <button type="submit">Add</button>
+            </form>
+            <ul>
+                {store.getState().map((note) => (
+                    <li
+                        key={note.id}
+                        onClick={() => {
+                            toggleImportance(note.id)
+                        }}
+                    >
+                        {note.content}{' '}
+                        <strong>{note.important ? 'important' : ''}</strong>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 const renderApp = () => {
