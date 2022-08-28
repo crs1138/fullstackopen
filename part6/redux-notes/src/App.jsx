@@ -1,11 +1,15 @@
-import NewNote from './NewNote'
-import Notes from './Notes'
+import NewNote from './components/NewNote'
+import Notes from './components/Notes'
+import VisibilityFilter from './components/VisibilityFilter'
 
-const App = () => (
-    <div>
-        <NewNote />
-        <Notes />
-    </div>
-)
+const App = () => {
+    return (
+        <div>
+            <NewNote />
+            <VisibilityFilter />
+            <Notes />
+        </div>
+    )
+}
 
 export default App
