@@ -27,6 +27,7 @@ export const incrementVote = (id) => {
 }
 
 const generateId = () => Number((Math.random() * 100000000).toFixed(0))
+
 export const createAnecdote = (content) => {
     return {
         type: 'CREATE_ANECDOTE',
