@@ -16,8 +16,8 @@ describe('anecdoteReducer', () => {
     ]
     test('user can vote', () => {
         const action = {
-            type: 'VOTE',
-            data: { id: 1 },
+            type: 'anecdotes/incrementVote',
+            payload: 1,
         }
 
         deepFreeze(state)
@@ -31,8 +31,8 @@ describe('anecdoteReducer', () => {
 
     test('create a new vote', () => {
         const action = {
-            type: 'CREATE_ANECDOTE',
-            data: { id: 3, content: 'new anecdote' },
+            type: 'anecdotes/createAnecdote',
+            payload: { id: 3, content: 'new anecdote' },
         }
         deepFreeze(state)
         const newState = reducer(state, action)
