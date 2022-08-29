@@ -1,4 +1,4 @@
-import reducer from './anecdoteReducer'
+import anecdoteReducer from './anecdoteReducer'
 import deepFreeze from 'deep-freeze'
 
 describe('anecdoteReducer', () => {
@@ -21,7 +21,7 @@ describe('anecdoteReducer', () => {
         }
 
         deepFreeze(state)
-        const newState = reducer(state, action)
+        const newState = anecdoteReducer(state, action)
         expect(newState).toContainEqual({
             content: 'testing text',
             id: 1,
@@ -35,7 +35,7 @@ describe('anecdoteReducer', () => {
             payload: { id: 3, content: 'new anecdote' },
         }
         deepFreeze(state)
-        const newState = reducer(state, action)
+        const newState = anecdoteReducer(state, action)
         expect(newState).toContainEqual({
             content: 'new anecdote',
             id: 3,
