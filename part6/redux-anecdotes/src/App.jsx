@@ -4,10 +4,10 @@ import Notification from './components/Notification'
 
 const App = () => (
     <div>
-        <Notification />
         <h2>Anecdotes</h2>
-        <AnecdoteForm />
+        <Notification />
         <AnecdoteList />
+        <AnecdoteForm />
     </div>
 )
 
