@@ -13,26 +13,9 @@ const store = configureStore({
     },
 })
 
-// // import { createNote } from './reducers/noteReducer'
-// // import { filterChange } from './reducers/filterReducer'
-
-// const reducer = combineReducers({
-//     notes: noteReducer,
-//     filter: filterReducer,
-// })
-
-// const store = createStore(reducer)
-// // store.subscribe(() => console.log(store.getState()))
-// // store.dispatch(filterChange('IMPORTANT'))
-// // store.dispatch(
-// //     createNote('combineReducers forms one reducer for many simple reducers')
-// // )
-
-console.log(store.getState())
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <Provider store={store}>
         <App />
     </Provider>
-    // <div />
 )
