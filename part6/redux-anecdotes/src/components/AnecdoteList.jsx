@@ -8,6 +8,7 @@ import Anecdote from './Anecdote'
 
 const AnecdoteList = () => {
     const anecdotes = useSelector((state) => state.anecdotes)
+    const filter = useSelector((state) => state.filter)
     const dispatch = useDispatch()
 
     const vote = (id, message) => {
@@ -21,10 +22,14 @@ const AnecdoteList = () => {
             dispatch(removeNotification())
         }, 5000)
     }
+    const filteredAnecdotes =
+        filter.length >= 3
+            ? anecdotes.filter((anecdote) => anecdote.content.includes(filter))
+            : anecdotes
 
     return (
         <>
-            {[...anecdotes] // prevents `.sort()` from mutating the state
+            {[...filteredAnecdotes] // prevents `.sort()` from mutating the state
                 .sort((a, b) => b.votes - a.votes)
                 .map((anecdote) => (
                     <Anecdote
