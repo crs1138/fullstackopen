@@ -29,10 +29,10 @@ describe('anecdoteReducer', () => {
         })
     })
 
-    test('create a new vote', () => {
+    test('create a new anecdote', () => {
         const action = {
             type: 'anecdotes/createAnecdote',
-            payload: { id: 3, content: 'new anecdote' },
+            payload: { id: 3, content: 'new anecdote', votes: 0 },
         }
         deepFreeze(state)
         const newState = anecdoteReducer(state, action)

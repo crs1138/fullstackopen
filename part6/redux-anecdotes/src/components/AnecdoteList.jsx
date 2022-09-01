@@ -1,10 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { incrementVote } from '../reducers/anecdoteReducer'
-import anecdoteServices from '../services/anecdoteServices'
-import {
-    setNotification,
-    removeNotification,
-} from '../reducers/notificationReducer'
+import { addVote } from '../reducers/anecdoteReducer'
+import { showNotification } from '../reducers/notificationReducer'
 import Anecdote from './Anecdote'
 
 const AnecdoteList = () => {
@@ -12,22 +8,12 @@ const AnecdoteList = () => {
     const filter = useSelector((state) => state.filter)
     const dispatch = useDispatch()
 
-    const vote = async (id, message) => {
+    const vote = (id, message) => {
         const anecdote = anecdotes.find((anec) => anec.id === id)
-        await anecdoteServices.update(id, {
-            ...anecdote,
-            votes: anecdote.votes + 1,
-        })
-        dispatch(incrementVote(id))
-        showNotification(`You voted for '${message}'`)
+        dispatch(addVote(anecdote))
+        dispatch(showNotification(`You voted for '${message}'`, 1))
     }
 
-    const showNotification = (message) => {
-        dispatch(setNotification(message))
-        setTimeout(() => {
-            dispatch(removeNotification())
-        }, 5000)
-    }
     const filteredAnecdotes =
         filter.length >= 3
             ? anecdotes.filter((anecdote) => anecdote.content.includes(filter))

@@ -1,28 +1,27 @@
 import { useDispatch } from 'react-redux'
-import { createAnecdote } from '../reducers/anecdoteReducer'
-import anecdoteServices from '../services/anecdoteServices'
+import { addAnecdote } from '../reducers/anecdoteReducer'
+import { showNotification } from '../reducers/notificationReducer'
 
 const AnecdoteForm = () => {
     const dispatch = useDispatch()
 
-    const addAnecdote = (eve) => {
+    const handleNewAnecdote = (eve) => {
         eve.preventDefault()
         const content = eve.target.newAnecdote.value
         eve.target.newAnecdote.value = ''
-        const newAnecdote = {
+        const anecdoteToBeAdded = {
             content,
             votes: 0,
         }
-        anecdoteServices.save(newAnecdote).then((savedAnecdote) => {
-            dispatch(createAnecdote(savedAnecdote))
-        })
+        dispatch(addAnecdote(anecdoteToBeAdded))
+        dispatch(showNotification(`Added "${content}"`, 3))
     }
 
     return (
         <>
             <h2>create new</h2>
 
-            <form onSubmit={addAnecdote}>
+            <form onSubmit={handleNewAnecdote}>
                 <div>
                     <input name="newAnecdote" />
                 </div>
