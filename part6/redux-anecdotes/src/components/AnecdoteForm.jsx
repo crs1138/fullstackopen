@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { createAnecdote } from '../reducers/anecdoteReducer'
+import anecdoteServices from '../services/anecdoteServices'
 
 const AnecdoteForm = () => {
     const dispatch = useDispatch()
@@ -8,7 +9,13 @@ const AnecdoteForm = () => {
         eve.preventDefault()
         const content = eve.target.newAnecdote.value
         eve.target.newAnecdote.value = ''
-        dispatch(createAnecdote(content))
+        const newAnecdote = {
+            content,
+            votes: 0,
+        }
+        anecdoteServices.save(newAnecdote).then((savedAnecdote) => {
+            dispatch(createAnecdote(savedAnecdote))
+        })
     }
 
     return (

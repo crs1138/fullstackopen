@@ -15,8 +15,7 @@ const anecdoteSlice = createSlice({
             })
         },
         createAnecdote(state, action) {
-            const newAnecdote = { ...action.payload, votes: 0 }
-            return [...state, newAnecdote]
+            return [...state, action.payload]
         },
         populateAnecdotes(state, action) {
             const anecdotes = action.payload
