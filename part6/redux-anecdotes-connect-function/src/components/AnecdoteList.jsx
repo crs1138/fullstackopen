@@ -11,7 +11,7 @@ const AnecdoteList = () => {
     const vote = (id, message) => {
         const anecdote = anecdotes.find((anec) => anec.id === id)
         dispatch(addVote(anecdote))
-        dispatch(showNotification(`You voted for '${message}'`, 1))
+        dispatch(showNotification(`You voted for '${message}'`, 3))
     }
 
     const filteredAnecdotes =
