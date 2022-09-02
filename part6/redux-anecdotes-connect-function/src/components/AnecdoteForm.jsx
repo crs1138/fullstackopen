@@ -1,10 +1,8 @@
-import { useDispatch } from 'react-redux'
+import { connect } from 'react-redux'
 import { addAnecdote } from '../reducers/anecdoteReducer'
 import { showNotification } from '../reducers/notificationReducer'
 
-const AnecdoteForm = () => {
-    const dispatch = useDispatch()
-
+const AnecdoteForm = (props) => {
     const handleNewAnecdote = (eve) => {
         eve.preventDefault()
         const content = eve.target.newAnecdote.value
@@ -13,8 +11,8 @@ const AnecdoteForm = () => {
             content,
             votes: 0,
         }
-        dispatch(addAnecdote(anecdoteToBeAdded))
-        dispatch(showNotification(`Added "${content}"`, 3))
+        props.addAnecdote(anecdoteToBeAdded)
+        props.showNotification(`Added "${content}"`, 3)
     }
 
     return (
@@ -31,4 +29,11 @@ const AnecdoteForm = () => {
     )
 }
 
-export default AnecdoteForm
+const mapDispatchToProps = {
+    addAnecdote,
+    showNotification,
+}
+
+const ConnectedAnecdoteForm = connect(null, mapDispatchToProps)(AnecdoteForm)
+
+export default ConnectedAnecdoteForm

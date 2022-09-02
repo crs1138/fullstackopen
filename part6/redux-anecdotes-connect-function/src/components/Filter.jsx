@@ -1,9 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { connect } from 'react-redux'
 import { set } from '../reducers/filterReducer'
 
-const Filter = () => {
-    const dispatch = useDispatch()
-    const filterValue = useSelector((state) => state.filter)
+const Filter = (props) => {
+    const filterValue = props.filter
 
     const style = {
         marginBottom: 10,
@@ -11,7 +10,7 @@ const Filter = () => {
 
     const handleChange = (eve) => {
         eve.preventDefault()
-        dispatch(set(eve.target.value))
+        props.set(eve.target.value)
     }
     return (
         <div style={style}>
@@ -21,4 +20,16 @@ const Filter = () => {
     )
 }
 
-export default Filter
+const mapStateToProps = (state) => {
+    return {
+        filter: state.filter,
+    }
+}
+
+const mapDispatchToProps = {
+    set,
+}
+
+const ConnectedFilter = connect(mapStateToProps, mapDispatchToProps)(Filter)
+
+export default ConnectedFilter
