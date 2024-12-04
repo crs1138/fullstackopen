@@ -1,5 +1,6 @@
 import {useDispatch} from 'react-redux'
-import { newAnecdote } from './redux/anecdoteReducer'
+import { newAnecdote } from '../redux/anecdoteReducer'
+import { setNotification, clearNotificationAfter } from '../redux/notificationReducer'
 const AnecdoteForm = () => {
     const dispatch = useDispatch()
     const handleSubmit = (eve) => {
@@ -8,6 +9,8 @@ const AnecdoteForm = () => {
         eve.target.anecdote.value = ''
         console.log({content})
         dispatch(newAnecdote(content))
+        dispatch(setNotification(`You added a new anecdote: ${content}`))
+        clearNotificationAfter(5000, dispatch)
     }
 
     return (      
