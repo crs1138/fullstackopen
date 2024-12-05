@@ -1,16 +1,15 @@
 import { useDispatch } from "react-redux";
 import { createNote } from "./redux/noteReducer";
-import NoteService from "../services/notes";
 
 const NewNote = () => {
   const dispatch = useDispatch();
 
-  const addNote = async (eve) => {
+  const addNote = (eve) => {
     eve.preventDefault();
     const content = eve.target.note.value;
     eve.target.note.value = "";
-    const newNote = await NoteService.createNew(content);
-    dispatch(createNote(newNote));
+    // @ts-expect-error "TS needs more tweaking."
+    dispatch(createNote(content));
   };
 
   return (

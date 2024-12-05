@@ -2,6 +2,7 @@
 import { createSlice, current } from "@reduxjs/toolkit";
 import { useAppSelector, useAppDispatch } from "./redux/store";
 import { type AppDispatch } from "./redux/store";
+import NoteService from "../services/notes";
 
 export interface Note {
   id: string;
@@ -15,10 +16,6 @@ export const noteSlice = createSlice({
   name: "notes",
   initialState,
   reducers: {
-    createNote(state, action) {
-      const content = action.payload;
-      state.push(action.payload);
-    },
     toggleImportanceOf(state, action) {
       const id = action.payload;
       const noteToChange = state.find((note) => note.id === id);
@@ -37,7 +34,29 @@ export const noteSlice = createSlice({
   },
 });
 
-export const { createNote, toggleImportanceOf, appendNote, setNotes } =
-  noteSlice.actions;
+export const { toggleImportanceOf, appendNote, setNotes } = noteSlice.actions;
+
+export const initializeNotes = () => {
+  return async (dispatch) => {
+    try {
+      const notes = await NoteService.getAll();
+      dispatch(setNotes(notes));
+    } catch (err) {
+      console.error("Failed to fetch notes", err);
+      dispatch(setNotes([]));
+    }
+  };
+};
+
+export const createNote = (content) => {
+  return async (dispatch) => {
+    try {
+      const newNote = await NoteService.createNew(content);
+      dispatch(appendNote(newNote));
+    } catch (err) {
+      console.error("Failed to create note", err);
+    }
+  };
+};
 
 export default noteSlice.reducer;
