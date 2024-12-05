@@ -31,6 +31,7 @@ const AnecdoteList = () => {
       }) 
       : anecdotes
     })
+    if (anecdotes.length <= 0) { return null}
     return (
         <div>
             {anecdotes.map((anecdote) =>(
