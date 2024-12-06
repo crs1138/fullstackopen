@@ -1,24 +1,13 @@
 import {useDispatch} from 'react-redux'
-import { addAnecdote } from '../redux/anecdoteReducer'
-import { setNotification, clearNotificationAfter } from '../redux/notificationReducer'
-import AnecdoteService from '../services/anecdotes'
+import { createAnecdote } from '../redux/anecdoteReducer'
 const AnecdoteForm = () => {
     const dispatch = useDispatch()
-    const handleSubmit = async (eve) => {
+    const handleSubmit = (eve) => {
         eve.preventDefault()
         const content = eve.target.anecdote.value
         eve.target.anecdote.value = ''
-        try {
-            const newAnecdote = await AnecdoteService.create(content)
-            dispatch(addAnecdote(newAnecdote))
-            dispatch(setNotification(`You added a new anecdote: ${content}`))
-            clearNotificationAfter(5000, dispatch)
-        } catch (err) {
-            console.error('Failed to create an anecdote.', err)
-            dispatch(setNotification('Failed to create an anecdote.'))
-            clearNotificationAfter(5000, dispatch)
+            dispatch(createAnecdote(content))
         }
-    }
 
     return (      
     <>
